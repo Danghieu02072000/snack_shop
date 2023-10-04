@@ -1,0 +1,77 @@
+<div
+  class="max-w-full rounded-3xl bg-radion py-14 px-12 lg:px-20 xl:px-24 text-start relative aos-init aos-animate"
+  data-aos="flip-left"
+  data-aos-duration="800"
+  data-aos-once="true">
+  <h3 class=" max-w-full xs:max-w-[50%] text-3xl lg:text-4xl text-white mb-5 font-bold">Have you got our offer?</h3>
+  <p class=" max-w-full text-base xs:max-w-[45%] lg:max-w-[350px] text-white">Best cooks and best delivery guys all at your service. Hot tasty food</p>
+  <img
+    src="../src/img/img-bg1.png"
+    alt=""
+    class="hidden xs:block absolute top-24 sm:top-0 right-0 sm:right-40">
+  <img
+    src="../src/img/img-bg2.png"
+    alt=""
+    class="hidden lg:block absolute bottom-0 right-96 ">
+  <img
+    src="../src/img/img-bg3.png"
+    alt=""
+    class="hidden sm:block absolute bottom-3 right-16">
+  <img
+    src="../src/img/img-bg4.png"
+    alt=""
+    class="hidden xs:block absolute top-10 right-24">
+  <img
+    src="../src/img/img-bg5.png"
+    alt=""
+    class="hidden xs:block absolute top-14 right-12">
+  <img
+    src="../src/img/img-bg6.png"
+    alt=""
+    class="hidden xs:block absolute top-8 right-40 lg:right-80">
+</div>
+{% schema %}
+  {
+    "name": "Banner Content",
+    "tag": "section",
+    "class": "section_wrapper",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      }, {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "column",
+        "name": "List Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "item_title",
+            "label": "Title"
+          }, {
+            "type": "text",
+            "id": "item_text",
+            "label": "DESC"
+          }, {
+            "type": "image_picker",
+            "id": "item_img",
+            "label": "Image"
+          }
+
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner Content"
+      }
+    ]
+  }
+{% endschema %}

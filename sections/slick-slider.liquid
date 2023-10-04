@@ -1,0 +1,106 @@
+{{ "owl.carousel.min.css" | asset_url | stylesheet_tag }}
+{{ "owl.theme.default.min.css" | asset_url | stylesheet_tag }}
+<div class="flex gap-1.5 items-center mb-16">
+  <h2 class="text-4xl font-bold ">{{ section.settings.heading }}</h2>
+  {% if section.settings.icon_heading %}
+    <img
+      src="{{ section.settings.icon_heading | image_url}}"
+      alt=""
+      width="28px"
+      height="28px">
+  {% endif %}
+</div>
+
+<div class="customeContainer owl-carousel">
+  {% for block in section.blocks %}
+    <div class="bg-gray-f6  py-5 px-7 rounded-3xl flex gap-10 xs:gap-6 lg:gap-8  relative">
+      <div class="">
+        <span class="text-2xl font-bold text-black-17 mb-4 inline-block">
+          {{ block.settings.item_heading }}</span>
+        <span class="text-lg text-gray-96 mb-1 block ">
+          {{ block.settings.item_text }}</span>
+        <span class="text-lg text-orange-f4 inline-block leading-3">
+          {{ block.settings.item_price | money }}
+        </span>
+      </div>
+      <img
+        class="h-[10rem] "
+        src="{{ block.settings.image | img_url : "master" }}"
+        alt=""
+        loading="lazy">
+    </div>
+
+  {% endfor %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "slick slider",
+    "tag": "section",
+    "class": "section_wrapper",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "heading",
+        "default": "This is Slick Slider"
+      }, {
+        "type": "image_picker",
+        "id": "icon_heading",
+        "label": "Icon Heading"
+      }, {
+        "type": "range",
+        "id": "num_columns",
+        "label": "Number Columns",
+        "min": 1,
+        "max": 4,
+        "step": 1,
+        "default": 4
+      }
+    ],
+    "blocks": [
+      {
+        "type": "column",
+        "name": "Slide",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "item_heading",
+            "label": "Item Heading"
+          },
+          {
+            "type": "text",
+            "id": "item_text",
+            "label": "Item Text"
+          }, {
+            "type": "text",
+            "id": "item_price",
+            "label": "Item Price"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Slick Slider"
+      }
+    ]
+  }
+{% endschema %}
+<script>
+  window.number_columns = {{ section.settings.num_columns}};
+</script>
+{{ "jquery.min.js" | asset_url | script_tag }}
+{{ "owl.carousel.min.js" | asset_url | script_tag }}
+{{ "cusomize.js" | asset_url | script_tag }}
