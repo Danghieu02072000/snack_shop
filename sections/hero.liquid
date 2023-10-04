@@ -1,0 +1,75 @@
+<div class=" flex gap-10 xl:gap-20 flex-col md:flex-row">
+  <div class="flex flex-col items-center md:items-start">
+    <h3 class="font-highlights text-orange-f4 mb-4 text-3xl sm:text-4xl"> {{ section.settings.title }}</h3>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl max-w-[515px] md:max-w-[370px] lg:max-w-[515px] mb-6 font-bold text-center md:text-start">{{ section.settings.heading }}</h1>
+    <p class="text-lg text-gray max-w-[452px] md:max-w-xs lg:max-w-[452px] mb-8">{{ section.settings.desc }}</p>
+    {% form 'create_customer' %}
+      <div class=" max-w-full sm:max-w-[464px] md:max-w-[370px] lg:max-w-[464px] flex border border-green rounded-2xl items-stretch overflow-hidden  mb-8 lg:mb-12">
+        <div class="px-3 flex items-center flex-1 ">
+            <input type="text" class="outline-none placeholder:text-base  text-base leading-4  flex-1 overflow-hidden mr-3" placeholder="Enter your delivery location">
+            <img src="{{ section.settings.img_btn | img_url: 'master'}}" alt="" class="w-6 h-6 ">
+        </div>
+        <div class="bg-green h-full flex gap-3 px-0 py-3 sm:pl-5 sm:pr-3 items-center">
+            <span class="text-base text-white hidden sm:block md:hidden lg:block">Discover</span>
+            <button class="w-10 h-10 bg-inherit sm:bg-white rounded-lg flex justify-center items-center text-white sm:text-black hover:bg-inherit hover:border-2 hover:border-white hover:text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+                </svg>
+            </button>
+        </div>
+      </div>
+    {% endform %}
+    <p class="text-lg text-gray-83 font-medium">Already member of our communty? <span class="text-orange-f4">Sign in</span></p>
+  </div>
+<div class="bg-yellow rounded-2xl flex items-center w-full md:w-1/2">
+  <img src="{{ section.settings.img | img_url : "master" }}" class="aspect-video w-full object-contain" >
+</div>
+</div>
+{% schema %}
+  {
+    "name" : "Herro",
+    "tag": "section",
+    "class": "section_wrapper",
+    "settings": [
+      {
+        "type": "text",
+        "id" : "title",
+        "label": "Title Hero",
+        "default": "this is Hero"
+      },
+      {
+        "type": "text",
+        "id" : "heading",
+        "label": "Heading Hero",
+        "default": "this is Hero"
+      },
+      {
+        "type": "text",
+        "id" : "desc",
+        "label": "DESC Hero",
+        "default": "this is Hero"
+      },
+      {
+        "type": "image_picker",
+        "id" : "img",
+        "label": "Img Hero"
+      },
+      {
+        "type": "image_picker",
+        "id" : "img_btn",
+        "label": "Img Button"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

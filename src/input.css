@@ -1,3 +1,75 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Seaweed+Script&display=swap');
+
+@layer base {
+  body {
+    @apply font-default text-base m-0 p-0 box-border;
+  }
+}
+@layer components {
+  .show {
+    transform: translateX(-120%);
+  }
+  .show1 {
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .owl-carousel .owl-item img {
+    width: auto;
+  }
+  .bg-radion {
+    background-image: linear-gradient(113deg, #feb618 50%, #2fb652 50%);
+  }
+  .bg-radion1 {
+    background-image: linear-gradient(113deg, #ff4415 50%, #feb618 50%);
+  }
+  .owl-next {
+    width: 29px;
+    height: 29px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1) !important;
+  }
+  .owl-next > span {
+    color: #fff;
+  }
+  .owl-prev {
+    width: 29px;
+    height: 29px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1) !important;
+  }
+  .owl-prev > span {
+    color: #fff;
+  }
+  .owl-nav {
+    position: absolute;
+    top: -25%;
+    right: 0;
+    display: flex;
+    gap: 5px;
+  }
+  .owl-prev:active,
+  .owl-prev:hover {
+    background-color: #151515 !important;
+  }
+  .owl-next:active,
+  .owl-next:hover {
+    background-color: #151515 !important;
+  }
+  .section_wrapper {
+    max-width: 120rem;
+    padding: 0 50px;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+}
