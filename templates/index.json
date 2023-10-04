@@ -87,10 +87,59 @@
         "icon_heading": "shopify:\/\/shop_images\/fire.png",
         "num_columns": 4
       }
+    },
+    "6e3124ef-7bbd-47a5-82cc-81f99e2ff0ac": {
+      "type": "header_section",
+      "settings": {
+        "title": "Hungry?",
+        "text_color": "#ff4d20",
+        "heading": "Wait a minute for delicious.",
+        "desc": ""
+      }
+    },
+    "ef50cc14-c158-480a-b95f-6035c84a6aad": {
+      "type": "multi_column",
+      "blocks": {
+        "3d0e63ec-6854-4481-8411-6160bf771256": {
+          "type": "column",
+          "settings": {
+            "item_title": "Easy to order",
+            "item_text": "n restaurant-controlled online food ordering, the restaurant ..",
+            "item_img": "shopify:\/\/shop_images\/img_note.png"
+          }
+        },
+        "9b010653-e7c7-49cc-a693-c8a3f9fb799b": {
+          "type": "column",
+          "settings": {
+            "item_title": "Easy to order",
+            "item_text": "In restaurant-controlled online food ordering, the restaurant ..",
+            "item_img": "shopify:\/\/shop_images\/img_map.png"
+          }
+        },
+        "998121b7-f40b-46c3-8705-025830472166": {
+          "type": "column",
+          "settings": {
+            "item_title": "Easy to order",
+            "item_text": "n restaurant-controlled online food ordering, the restaurant ..",
+            "item_img": "shopify:\/\/shop_images\/img_sawich.png"
+          }
+        }
+      },
+      "block_order": [
+        "3d0e63ec-6854-4481-8411-6160bf771256",
+        "9b010653-e7c7-49cc-a693-c8a3f9fb799b",
+        "998121b7-f40b-46c3-8705-025830472166"
+      ],
+      "settings": {
+        "title": "",
+        "heading": ""
+      }
     }
   },
   "order": [
     "61d32215-6e44-4f00-adbb-c1f53c471aee",
-    "ec3b8065-e84d-4176-b020-bf4a263032bc"
+    "ec3b8065-e84d-4176-b020-bf4a263032bc",
+    "6e3124ef-7bbd-47a5-82cc-81f99e2ff0ac",
+    "ef50cc14-c158-480a-b95f-6035c84a6aad"
   ]
 }
