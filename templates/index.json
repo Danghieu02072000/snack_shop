@@ -134,12 +134,24 @@
         "title": "",
         "heading": ""
       }
+    },
+    "f1bf0398-ff3c-44d0-80e7-ba01622f0fbb": {
+      "type": "banner",
+      "settings": {
+        "title": "Have you got our offer?",
+        "desc": "Best cooks and best delivery guys all at your service. Hot tasty food",
+        "item_1": "shopify:\/\/shop_images\/img-bg1.png",
+        "item_2": "shopify:\/\/shop_images\/img-bg2.png",
+        "item_3": "shopify:\/\/shop_images\/img-bg3.png",
+        "item_4": "shopify:\/\/shop_images\/img-bg4.png"
+      }
     }
   },
   "order": [
     "61d32215-6e44-4f00-adbb-c1f53c471aee",
     "ec3b8065-e84d-4176-b020-bf4a263032bc",
     "6e3124ef-7bbd-47a5-82cc-81f99e2ff0ac",
-    "ef50cc14-c158-480a-b95f-6035c84a6aad"
+    "ef50cc14-c158-480a-b95f-6035c84a6aad",
+    "f1bf0398-ff3c-44d0-80e7-ba01622f0fbb"
   ]
 }
