@@ -1,0 +1,67 @@
+<div class="blog-show"> 
+    <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 justify-between gap-4 mb-24"> 
+      {% for block in section.blocks %}
+          <div class="flex flex-col justify-center items-center aos-init aos-animate text-center">
+            <img src="{{ block.settings.item_img | image_url }}" alt="" class="w-40 mb-5 md:mb-10 aspect-square">
+            <h3 class="text-3xl font-bold mb-6 text-black-17"> {{ block.settings.item_title }}</h3>
+            <p class="max-w-[270px] text-base text-gray"> {{ block.settings.item_text }}</p>
+          </div>
+      {% endfor %}
+    </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Multi Column",
+    "tag": "section",
+    "class": "section_wrapper",
+    "settings": [
+      {
+        "type" : "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type" : "text",
+        "id": "heading",
+        "label": "Heading"
+      }
+    ],
+    "blocks" : [
+      {
+        "type" : "column",
+        "name" : "List Block",
+        "settings" : [
+          {
+            "type": "text",
+            "id": "item_title",
+            "label" : "Title"
+          },
+          {
+            "type": "text",
+            "id": "item_text",
+            "label" : "DESC"
+          },
+           {
+            "type": "image_picker",
+            "id": "item_img",
+            "label" : "Image"
+          }
+          
+        ]
+      }
+    ],
+    "presets" : [
+      {
+      "name" : "Multi Column"
+    }
+    ] 
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
