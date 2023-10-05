@@ -145,6 +145,43 @@
         "item_3": "shopify:\/\/shop_images\/img-bg3.png",
         "item_4": "shopify:\/\/shop_images\/img-bg4.png"
       }
+    },
+    "b634fcbf-75aa-4a98-8991-ea3e6ab7f70c": {
+      "type": "header_section",
+      "settings": {
+        "title": "Popular Menu",
+        "text_color": "#ff4d20",
+        "heading": "Wait a minute for delicious.",
+        "desc": ""
+      }
+    },
+    "e4786c9b-a82d-4033-92c5-d7fe98308ec6": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured collection",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -152,6 +189,8 @@
     "ec3b8065-e84d-4176-b020-bf4a263032bc",
     "6e3124ef-7bbd-47a5-82cc-81f99e2ff0ac",
     "ef50cc14-c158-480a-b95f-6035c84a6aad",
-    "f1bf0398-ff3c-44d0-80e7-ba01622f0fbb"
+    "f1bf0398-ff3c-44d0-80e7-ba01622f0fbb",
+    "b634fcbf-75aa-4a98-8991-ea3e6ab7f70c",
+    "e4786c9b-a82d-4033-92c5-d7fe98308ec6"
   ]
 }
