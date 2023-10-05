@@ -12,21 +12,6 @@
   .show {
     transform: translateX(-120%);
   }
-  .show1 {
-    z-index: 10;
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .owl-carousel .owl-item img {
-    width: auto !important;
-  }
-  .bg-radion {
-    background-image: linear-gradient(113deg, #feb618 50%, #2fb652 50%);
-  }
-  .bg-radion1 {
-    background-image: linear-gradient(113deg, #ff4415 50%, #feb618 50%);
-  }
   .owl-next {
     width: 29px;
     height: 29px;
@@ -66,6 +51,22 @@
   .owl-next:hover {
     background-color: #151515 !important;
   }
+  .show1 {
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .owl-carousel .owl-item img {
+    width: auto !important;
+  }
+  .bg-radion {
+    background-image: linear-gradient(113deg, #feb618 50%, #2fb652 50%);
+  }
+  .bg-radion1 {
+    background-image: linear-gradient(113deg, #ff4415 50%, #feb618 50%);
+  }
+
   .section_wrapper {
     max-width: 120rem;
     padding: 0 50px;

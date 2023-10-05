@@ -626,7 +626,6 @@ body {
   padding: 0 50px;
   margin: 0 auto;
   margin-top: 40px;
-  margin: 40px 0;
 }
 
 .fixed {
@@ -673,8 +672,8 @@ body {
   right: 10rem;
 }
 
-.right-96 {
-  right: 24rem;
+.right-\[36rem\] {
+  right: 36rem;
 }
 
 .top-10 {
@@ -691,14 +690,6 @@ body {
 
 .top-8 {
   top: 2rem;
-}
-
-.right-\[\] {
-  right: ;
-}
-
-.right-\[36rem\] {
-  right: 36rem;
 }
 
 .isolate {
@@ -950,9 +941,9 @@ body {
   padding-right: 0px;
 }
 
-.px-12 {
-  padding-left: 3rem;
-  padding-right: 3rem;
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 .px-3 {
@@ -965,9 +956,9 @@ body {
   padding-right: 1.75rem;
 }
 
-.py-14 {
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 .py-3 {
@@ -1133,10 +1124,6 @@ body {
     display: block;
   }
 
-  .xs\:hidden {
-    display: none;
-  }
-
   .xs\:max-w-\[45\%\] {
     max-width: 45%;
   }
@@ -1165,24 +1152,16 @@ body {
 }
 
 @media (min-width: 640px) {
-  .sm\:right-40 {
-    right: 10rem;
+  .sm\:right-60 {
+    right: 15rem;
   }
 
   .sm\:top-0 {
     top: 0px;
   }
 
-  .sm\:right-60 {
-    right: 15rem;
-  }
-
   .sm\:block {
     display: block;
-  }
-
-  .sm\:hidden {
-    display: none;
   }
 
   .sm\:max-w-\[464px\] {
