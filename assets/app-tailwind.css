@@ -626,6 +626,7 @@ body {
   padding: 0 50px;
   margin: 0 auto;
   margin-top: 40px;
+  margin: 40px 0;
 }
 
 .fixed {
@@ -690,6 +691,14 @@ body {
 
 .top-8 {
   top: 2rem;
+}
+
+.right-\[\] {
+  right: ;
+}
+
+.right-\[36rem\] {
+  right: 36rem;
 }
 
 .isolate {
@@ -1113,9 +1122,19 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+@media (min-width: 330px) {
+  .\33xs\:hidden {
+    display: none;
+  }
+}
+
 @media (min-width: 500px) {
   .xs\:block {
     display: block;
+  }
+
+  .xs\:hidden {
+    display: none;
   }
 
   .xs\:max-w-\[45\%\] {
@@ -1154,8 +1173,16 @@ body {
     top: 0px;
   }
 
+  .sm\:right-60 {
+    right: 15rem;
+  }
+
   .sm\:block {
     display: block;
+  }
+
+  .sm\:hidden {
+    display: none;
   }
 
   .sm\:max-w-\[464px\] {
