@@ -1,0 +1,7 @@
+package-lock.json
+package.json
+
+config/settings_data.json
+templates/*.json
+locales/
+tailwind.config.js
