@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Seaweed+Script&display=swap');
-
 @layer base {
   body {
     @apply font-default text-base m-0 p-0 box-border;
