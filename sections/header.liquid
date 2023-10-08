@@ -1,10 +1,9 @@
 
 
             <nav class="flex justify-between items-center h-16">
-                <div class="flex gap-3 h-4 sm:h-6" id="logo">
-                  <img src="{{ 'Logo.png' | asset_url}}" alt="">
-                  <img src="{{ 'Besnik.png' | asset_url}}" alt="">
-                </div>
+                  <a href="/" class="flex gap-3 " id="logo">
+                  <img src="{{ section.settings.img_logo1 | img_url: 'master' }}" alt="" style="height:{{ section.settings.size_logo1}}px" >
+                  <img src="{{ section.settings.img_logo2 | img_url: 'master' }}" alt="" style="height:{{ section.settings.size_logo2}}px"></a>
                 <ul class="gap-10 hidden items-center text-sm md:flex">
                 {% for link in linklists.main-menu.links -%}
                   <li>{{ link.title | link_to: link.url }}</li>
@@ -42,7 +41,34 @@
     "tag": "header",
     "class": "header",
     "settings": [
-
+        {
+          "type":"image_picker",
+          "id":"img_logo1",
+          "label":"Logo 1"
+        },
+        {
+          "type": "range",
+          "id": "size_logo1",
+          "label": "Size Logo 1",
+          "default": 24,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type":"image_picker",
+          "id":"img_logo2",
+          "label":"Logo 1"
+        },
+        {
+          "type": "range",
+          "id": "size_logo2",
+          "label": "Size Logo 2",
+          "default": 24,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
     ]
   }
 {% endschema %}
