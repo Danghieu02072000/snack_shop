@@ -1,10 +1,10 @@
 <div class=" flex gap-10 xl:gap-20 flex-col md:flex-row">
-  <div class="flex flex-col items-center md:items-start">
-    <h3 class="font-highlights text-orange-f4 mb-4 text-3xl sm:text-4xl"> {{ section.settings.title }}</h3>
-    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl max-w-[515px] md:max-w-[370px] lg:max-w-[515px] mb-6 font-bold text-center md:text-start">{{ section.settings.heading }}</h1>
+  <div class="flex flex-col items-center md:items-start md:w-1/2">
+    <h3 class="font-highlights text-orange-f4 mt-4 text-3xl sm:text-4xl"> {{ section.settings.title }}</h3>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl max-w-[515px] md:max-w-[370px] lg:max-w-[515px] mt-6 font-bold text-center md:text-start">{{ section.settings.heading }}</h1>
     <p class="text-lg text-gray max-w-[452px] md:max-w-xs lg:max-w-[452px] mb-8">{{ section.settings.desc }}</p>
     {% form 'create_customer' %}
-      <div class=" max-w-full sm:max-w-[464px] md:max-w-[370px] lg:max-w-[464px] flex border border-green rounded-2xl items-stretch overflow-hidden  mb-8 lg:mb-12">
+      <div class=" max-w-full sm:max-w-[464px] md:max-w-[370px] lg:max-w-[464px] flex border border-green rounded-2xl items-stretch overflow-hidden  mt-6 lg:mt-8">
         <div class="px-3 flex items-center flex-1 ">
             <input type="text" class="outline-none placeholder:text-base  text-base leading-4  flex-1 overflow-hidden mr-3" placeholder="Enter your delivery location">
             <img src="{{ section.settings.img_btn | img_url: 'master'}}" alt="" class="w-6 h-6 ">
@@ -19,7 +19,7 @@
         </div>
       </div>
     {% endform %}
-    <p class="text-lg text-gray-83 font-medium">Already member of our communty? <span class="text-orange-f4">Sign in</span></p>
+    <p class="text-lg text-gray-83 font-medium mt-6">Already member of our communty? <span class="text-orange-f4">Sign in</span></p>
   </div>
 <div class="bg-yellow rounded-2xl flex items-center w-full md:w-1/2">
   <img src="{{ section.settings.img | img_url : "master" }}" class="aspect-video w-full object-contain" >

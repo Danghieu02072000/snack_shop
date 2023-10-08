@@ -1,26 +1,84 @@
 
-<header class="container mb-7 md:mt-4">
-            <nav class="flex justify-between items-center h-16">
-                <div class="flex gap-3 h-4 sm:h-6" id="logo">
-                    <img src="./src/img/Logo.png" alt="">
-                    <img src="./src/img/Besnik.png" alt="">
-                </div>
+<div class="" style="background-color: {{ section.settings.color_scheme.settings.background }}; color:{{ section.settings.color_scheme.settings.text }}; padding-top: {{ section.settings.padding_top }}px ; padding-bottom: {{ section.settings.padding_bottom }}px">
+      {% case section.settings.logo_position  %}
+      {% when 'middle-left' %}
+        <nav class="flex justify-between items-center  max-w-xl mx-auto px-12" >
+                  <a href="/" class="flex gap-3 " id="logo">
+                  <img src="{{ section.settings.img_logo1 | img_url: 'master' }}" alt="" style="height:{{ section.settings.size_logo1}}px" >
+                  <img src="{{ section.settings.img_logo2 | img_url: 'master' }}" alt="" style="height:{{ section.settings.size_logo2}}px"></a>
                 <ul class="gap-10 hidden items-center text-sm md:flex">
-                {% for link in linklists.main-menu.links -%}
+                {% for link in section.settings.navigation.links -%}
                   <li>{{ link.title | link_to: link.url }}</li>
                 {%- endfor %}
                 </ul>
                 <div class="flex gap-3 justify-center items-center">
                     <button class="xs:text-xs xs:px-3 xs:py-2 text-sm  py-3 px-4 bg-black text-white inline-block rounded-xl leading-5 hover:opacity-70 hover:shadow-md transition-all">Sign
                         Up</button>
-                    <div class="xs:p-[9px] p-[10px] bg-orange inline-block rounded-xl"><img src="./src/img/Icon_cart.png" alt="" class="xs:h-5 xs:w-5 h-6 w-6"></div>
+                    <a src="/cart" class="xs:p-[9px] p-[10px] inline-block rounded-xl" style=" background-color: {{ section.settings.color_scheme.settings.shadow }};  "><img src="{{ 'Icon_cart.png' | asset_url}} " alt="" class="xs:h-5 xs:w-5 h-6 w-6"></a>
                 </div>
+        </nav>
+      {% when 'middle-center' %}
+        <nav class="flex justify-between items-center  max-w-xl mx-auto px-12" >
+            <ul class="gap-10 hidden items-center text-sm md:flex">
+              {% for link in section.settings.navigation.links -%}
+                <li>{{ link.title | link_to: link.url }}</li>
+              {%- endfor %}
+            </ul>
+            <a href="/" class="flex gap-3 " id="logo">
+            <img src="{{ section.settings.img_logo1 | img_url: 'master' }}" alt="" style="height:{{ section.settings.size_logo1}}px" >
+            <img src="{{ section.settings.img_logo2 | img_url: 'master' }}" alt="" style="height:{{ section.settings.size_logo2}}px"></a>
+            <div class="flex gap-3 justify-center items-center">
+              <button class="xs:text-xs xs:px-3 xs:py-2 text-sm  py-3 px-4 bg-black text-white inline-block rounded-xl leading-5 hover:opacity-70 hover:shadow-md transition-all">Sign
+                Up</button>
+              <a src="/cart" class="xs:p-[9px] p-[10px] inline-block rounded-xl" style=" background-color: {{ section.settings.color_scheme.settings.shadow }};  "><img src="{{ 'Icon_cart.png' | asset_url}} " alt="" class="xs:h-5 xs:w-5 h-6 w-6"></a>
+            </div>
+        </nav>
+        {% when 'top-center' %}
+          <nav class="flex flex-col gap-3 items-center  max-w-xl mx-auto px-12" >
+              <div class="flex justify-between items-center w-full pt-4">
+                <a class="xs:text-xs xs:px-3 xs:py-2 text-sm  py-3 px-4 bg-black text-white inline-block rounded-xl leading-5 hover:opacity-70 hover:shadow-md transition-all">Sign
+                  Up
+                </a>
+                <a href="/" class="flex gap-3 " id="logo">
+                  <img src="{{ section.settings.img_logo1 | img_url: 'master' }}" alt="" style="height:{{ section.settings.size_logo1}}px" >
+                  <img src="{{ section.settings.img_logo2 | img_url: 'master' }}" alt="" style="height:{{ section.settings.size_logo2}}px">
+                </a>
+                <a src="/cart" class="xs:p-[9px] p-[10px] inline-block rounded-xl" style=" background-color: {{ section.settings.color_scheme.settings.shadow }};  "><img src="{{ 'Icon_cart.png' | asset_url}} " alt="" class="xs:h-5 xs:w-5 h-6 w-6"></a>
+              </div>
+              <ul class="gap-10 hidden items-center text-sm md:flex">
+                {% for link in section.settings.navigation.links -%}
+                  <li>{{ link.title | link_to: link.url }}</li>
+                {%- endfor %}
+              </ul>
+          </nav>
+          {% when 'top-left' %}
+            <nav class="flex flex-col gap-3 items-start  max-w-xl mx-auto px-12 justify-center" >
+                <div class="flex justify-between items-center w-full pt-2">
+                  <a href="/" class="flex gap-3 " id="logo">
+                  <img src="{{ section.settings.img_logo1 | img_url: 'master' }}" alt="" style="height:{{ section.settings.size_logo1}}px" >
+                  <img src="{{ section.settings.img_logo2 | img_url: 'master' }}" alt="" style="height:{{ section.settings.size_logo2}}px">
+                  </a>
+                  <div class="flex gap-3">
+                    <a class="xs:text-xs xs:px-3 xs:py-2 text-sm  py-3 px-4 bg-black text-white inline-block rounded-xl leading-5 hover:opacity-70 hover:shadow-md transition-all">Sign
+                     Up
+                    </a>
+                    <a class="xs:p-[9px] p-[10px] inline-block rounded-xl" style=" background-color: {{ section.settings.color_scheme.settings.shadow }};  " src="/cart"><img src="{{ 'Icon_cart.png' | asset_url}} " alt="" class="xs:h-5 xs:w-5 h-6 w-6"></a>
+                  </div>
+                </div>
+                <ul class="gap-10 hidden items-center text-sm md:flex">
+                  {% for link in section.settings.navigation.links -%}
+                    <li>{{ link.title | link_to: link.url }}</li>
+                  {%- endfor %}
+                </ul>
             </nav>
+      {% else %}
+                <nav>no navigation</nav>
+        {% endcase %}
             <div id="menu_mobie" class="absolute top-0 left-0 bottom-0 bg-white w-9/12 shadow-2xl z-20 show transition-all duration-1000 md:hidden">
                 <div class="flex justify-between items-center p-7">
                     <div class="flex gap-3 h-4 sm:h-6" id="logo">
-                        <img src="../assets/img/Logo.png" alt="">
-                        <img src="./src/img/Besnik.png" alt="">
+                        <img src="{{ 'Logo.png' | asset_url}}" alt="">
+                        <img src="{{ 'Besnik.png' | asset_url}}" alt="">
                     </div>
                     <div class="" id="close"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 sm:w-10 sm:h-10 font-semibold">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
@@ -35,4 +93,97 @@
             </div>
             <div id="overlay" class="absolute top-0 left-0 w-full h-[100vh] bg-black bg-opacity-80  show1 duration-500 md:hidden z-10">
             </div>
-</header>
+</div>
+{% schema %}
+  {
+    "name": "Header",
+    "tag": "header",
+    "class": "header",
+    "settings": [
+        {
+        "type": "link_list",
+        "id": "navigation",
+        "label": "Navigation Menu",
+        "default": "main-menu"
+        },
+        {
+          "type":"image_picker",
+          "id":"img_logo1",
+          "label":"Logo 1"
+        },
+        {
+          "type": "range",
+          "id": "size_logo1",
+          "label": "Size Logo 1",
+          "default": 24,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type":"image_picker",
+          "id":"img_logo2",
+          "label":"Logo 1"
+        },
+        {
+          "type": "range",
+          "id": "size_logo2",
+          "label": "Size Logo 2",
+          "default": 24,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "Color Scheme",
+          "default": "background-1"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Padding Top",
+          "default": 15,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Padding Bottom",
+          "default": 15,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+        ,
+        {
+      "type": "select",
+      "id": "logo_position",
+      "default": "middle-left",
+      "label": "logo Position",
+      "options": [
+          {
+            "value": "top-left",
+            "label": "Top Left"
+          },
+          {
+            "value": "top-center",
+            "label": "Top Center"
+          },
+          {
+            "value": "middle-left",
+            "label": "Middle left"
+          },
+          {
+            "value": "middle-center",
+            "label": "Middle Center"
+          }
+      ]
+
+    }
+    ]
+  }
+{% endschema %}
