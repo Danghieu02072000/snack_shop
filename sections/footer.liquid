@@ -1,5 +1,28 @@
-<div class="footer">
+<div class="footer max-w-xl mx-auto px-12">
   <h2 class="text-red-600">Footer Title</h2>
+  <div class="grid grid-cols-3 gap-3 ">
+    {% if section.blocks[0] %}
+      <div class="flex flex-col justify-center items-center text-start">
+        <h2>{{ section.blocks[0].settings.heading }}</h2>
+        <p>{{ section.blocks[0].settings.subtext }}</p>
+      </div>
+    {% endif %}
+    {% if section.blocks[1] %}
+      <div class="flex flex-col justify-center items-center text-start">
+        <h2>{{ section.blocks[1].settings.heading }}</h2>
+        <ul class="gap-10 hidden items-center text-sm md:flex">
+          {% for link in section.blocks[1].settings.navigation.links -%}
+            <li>{{ link.title | link_to: link.url }}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+    {% endif %}
+    {% if section.blocks[2] %}
+      <div class="flex flex-col justify-center items-center text-start">
+        {{ section.blocks[2].settings.image | img_url: 'master' | img_tag }}
+      </div>
+    {% endif %}
+  </div>
 </div>
 {% schema %}
   {
