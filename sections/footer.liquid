@@ -1,5 +1,50 @@
-<div class="footer">
-  <h2 class="text-red-600">Footer Title</h2>
+{%   liquid   
+  assign col = "grid-template-columns: auto"
+  assign block = section.blocks | size
+  case block
+  when 1 
+   assign col = "grid-template-columns: 1fr"
+  when 2 
+   assign col = "grid-template-columns: 1fr 1fr"
+  when 3 
+   assign col = "grid-template-columns: 1fr 1fr 1fr"
+  endcase
+%}
+<div class="footer__wrapepr" style="background-color: {{ section.settings.color_scheme.settings.background }}; color:{{ section.settings.color_scheme.settings.text }}; padding-top: {{ section.settings.padding_top }}px ; padding-bottom: {{ section.settings.padding_bottom }}px">
+<div class="footer__container max-w-xl mx-auto px-12">
+  <div class="grid gap-5 " style="{% liquid echo col %}">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when "text" %}
+        <div class="flex flex-col " style=" text-align: {{ block.settings.position_heading }};">
+          <h2 class="text-2xl">{{ block.settings.heading }}</h2>
+          <p class="text-sm mt-4">{{ block.settings.subtext }}</p>
+          </p>
+        </div>
+        {% when "link_list" %}
+        <div class="flex flex-col " style="text-align: {{ block.settings.position_text }};">
+          <h2 class="text-2xl">{{ block.settings.heading }}</h2>
+          <ul class="gap-3 flex  text-sm flex-col mt-4">
+            {% for link in block.settings.navigation.links -%}
+              <li>{{ link.title | link_to: link.url }}</li>
+            {%- endfor %}
+          </ul>
+        </div>
+        {% when "image" %}
+        <div class="flex flex-col " style="align-items: {{ block.settings.img_position }};">
+          <img src="{{ block.settings.image | img_url: 'master' }}" alt=""  style=" height : {{ block.settings.size_img1 }}px">
+        </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+</div>
+<div class="copy-right__border copy-right" style="background-color: {{ section.settings.color_scheme.settings.background }}; color:{{ section.settings.color_scheme.settings.text }};">
+  <div class="max-w-xl mx-auto px-12 py-5">
+    <small class="">&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
+  </small>
+  <small class="copyright__content">{{ powered_by_link }}</small>
+  </div>
 </div>
 {% schema %}
   {
@@ -17,7 +62,7 @@
         "type": "range",
         "id": "padding_top",
         "label": "Padding Top",
-        "default": 15,
+        "default": 25,
         "min": 0,
         "max": 100,
         "step": 1
@@ -25,7 +70,7 @@
         "type": "range",
         "id": "padding_bottom",
         "label": "Padding Bottom",
-        "default": 15,
+        "default": 25,
         "min": 0,
         "max": 100,
         "step": 1
@@ -41,7 +86,28 @@
             "id": "heading",
             "default": "Heading",
             "label": "Heading "
-          }, {
+          },
+          {
+            "type": "select",
+            "id": "position_heading",
+            "default": "start",
+            "label": "Heading Align ",
+            "options": [
+              {
+                "value": "start",
+                "label": "Left"
+              },
+              {
+                "value": "center",
+                "label": "Center"
+              },
+              {
+                "value": "end",
+                "label": "right"
+              }
+            ]
+          },
+          {
             "type": "richtext",
             "id": "subtext",
             "default": "<p>Share contact information, store details, and brand content with your customers.</p>",
@@ -62,7 +128,28 @@
             "id": "navigation",
             "label": "Navigation Menu",
             "default": "main-menu"
+          },
+          {
+            "type": "select",
+            "id": "position_text",
+            "default": "start",
+            "label": "Content Align ",
+            "options": [
+              {
+                "value": "start",
+                "label": "Left"
+              },
+              {
+                "value": "center",
+                "label": "Center"
+              },
+              {
+                "value": "end",
+                "label": "right"
+              }
+            ]
           }
+
         ]
       }, {
         "type": "image",
@@ -79,7 +166,7 @@
             "max": 100,
             "min": 0,
             "step": 1,
-            "default": 40,
+            "default": 26,
             "unit": "px"
           }, {
             "type": "select",
@@ -87,17 +174,18 @@
             "label": "Image alignment",
             "options": [
               {
+                "value": "start",
+                "label": "Left"
+              }, 
+              {
                 "value": "center",
                 "label": "Center"
-              }, {
-                "value": "left",
-                "label": "Left"
-              }, {
-                "value": "right",
+              },{
+                "value": "end",
                 "label": "Right"
               }
             ],
-            "default": "center"
+            "default": "start"
           }
         ]
       }

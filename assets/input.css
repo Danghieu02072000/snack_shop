@@ -20,6 +20,9 @@
     align-items: center;
     background-color: rgba(0, 0, 0, 0.1) !important;
   }
+  .copy-right__border {
+    border-top: solid 0.8px rgba(242, 239, 221, 0.8);
+  }
   .owl-next > span {
     color: #fff;
   }
