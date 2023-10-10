@@ -8,7 +8,7 @@
                   <img src="{{ section.settings.img_logo2 | img_url: 'master' }}" alt="" style="height:{{ section.settings.size_logo2}}px"></a>
                 <ul class="gap-10 hidden items-center text-sm md:flex">
                 {% for link in section.settings.navigation.links -%}
-                  <li>{{ link.title | link_to: link.url }}</li>
+                  <li class="hover:underline">{{ link.title | link_to: link.url }}</li>
                 {%- endfor %}
                 </ul>
                 <div class="flex gap-3 justify-center items-center">

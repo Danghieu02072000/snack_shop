@@ -14,7 +14,37 @@
   endcase
 
 %}
+{%   liquid   
+  assign col_tablet = "grid-template-columns: auto"
+  assign column_tablet = section.settings.tablet-column_product
+  case column_tablet
+  when 1 
+   assign col_tablet = "grid-template-columns: 1fr"
+  when 2 
+   assign col_tablet = "grid-template-columns: 1fr 1fr"
+  when 3 
+   assign col_tablet = "grid-template-columns: 1fr 1fr 1fr"
+  when 4
+   assign col_tablet = "grid-template-columns: 1fr 1fr 1fr 1fr"
+  endcase
 
+%}
+
+{%   liquid   
+  assign col_mobie = "grid-template-columns: auto"
+  assign column_mobie = section.settings.mobie-column_product
+  case column_mobie
+  when 1 
+   assign col_mobie = "grid-template-columns: 1fr"
+  when 2 
+   assign col_mobie = "grid-template-columns: 1fr 1fr"
+  when 3 
+   assign col_mobie = "grid-template-columns: 1fr 1fr 1fr"
+  when 4
+   assign col_mobie = "grid-template-columns: 1fr 1fr 1fr 1fr"
+  endcase
+
+%}
 {%   liquid   
   assign aspect = "aspect-ratio: auto"
   assign aspect_value = section.settings.aspect_ratio
@@ -30,20 +60,20 @@
 %}
 
 
-<div class="px-12" style="background-color: {{ section.settings.color_scheme.settings.background }}; color:{{ section.settings.color_scheme.settings.text }}; padding-top: {{ section.settings.padding_top }}px ; padding-bottom: {{ section.settings.padding_bottom }}px">
+<div class="px-12" style=" background-color: {{ section.settings.color_scheme.settings.background }}; color:{{ section.settings.color_scheme.settings.text }}; padding-top: {{ section.settings.padding_top }}px ; padding-bottom: {{ section.settings.padding_bottom }}px">
   <div class="max-w-xl mx-auto">
   <h2 class=" font-bold mt-5" style="font-size: {{ section.settings.size_heading }}px"> {{ collections['frontpage'].title }}</h2>
 
 
   {% paginate collections['frontpage'].products by section.settings.max_product  %}
-    <div class="grid  gap-5 mt-10 gap-y-10" style="{% liquid echo col %}">
+    <div class="grid  gap-5 mt-10 gap-y-10 col_product" style="">
     {% for product in collections['frontpage'].products %}
-      <a href="{{ product.url }}" class="flex flex-col gap-5 ">
+      <a href="{{ product.url }}" class="flex flex-col gap-5 group">
         <div class="w-full rounded-xl overflow-hidden aspect-[0.8] shadow-xl border border-slate-600 border-solid " style=" {%  liquid echo  aspect %} ;">
           <img src="{{ product.featured_image |  img_url: 'master' }}" alt="" class="object-cover hover:scale-105 transition-all duration-300 w-full h-full">
         </div>
         <div class="flex flex-col gap-2 flex-1 justify-end">
-          <h3 class="font-highlights hover:underline transition-all " style="font-size: {{ section.settings.size_title }}px">{{ product.title }}</h3>
+          <h3 class="font-highlights group-hover:underline transition-all " style="font-size: {{ section.settings.size_title }}px">{{ product.title }}</h3>
           <span class=" font-default text-base inline-block">{{ product.price | money }}</span>
         </div>
       </a>
@@ -81,6 +111,23 @@
 
 </div>
 </div>
+
+<style>
+  .col_product {
+    {% liquid echo col %}
+  }
+  @media only screen and (max-width: 768px) 
+  { 
+  .col_product {
+    {% liquid echo col_tablet %} 
+  } 
+  }
+  @media only screen and (max-width: 500px) {
+  .col_product {
+    {% liquid echo col_mobie %}
+  }
+  }
+</style>
 {% schema %}
   {
     "name": "collection",
@@ -90,8 +137,26 @@
         {
           "type": "range",
           "id": "column_product",
-          "label": "Column Product",
+          "label": "Desktop Column Product",
           "default": 4,
+          "min": 1,
+          "max": 4,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "tablet-column_product",
+          "label": "Tablet Column Product",
+          "default": 3,
+          "min": 1,
+          "max": 4,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "mobie-column_product",
+          "label": "Mobie Column Product",
+          "default": 2,
           "min": 1,
           "max": 4,
           "step": 1
