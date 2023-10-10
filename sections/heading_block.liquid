@@ -1,0 +1,49 @@
+
+<div class="block-heading mt-14 text-center pt-8 pb-3"> 
+  
+  <h2 class="font-highlights text-orange-f4 mt-4 text-3xl sm:text-4xl"style="color: {{ section.settings.text_color}}">{{ section.settings.title }}</h2>
+  <h2 class="mx-auto max-w-[85%] sm:max-w-[55%] text-6xl font-bold mt-2" >{{ section.settings.heading }}</h2>
+  <p class="text-base max-w-[75%] sm:max-w-[55%] mx-auto mt-8 text-slate-600" >{{ section.settings.desc }}</p>
+</div>
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": [
+      {
+        "type" : "inline_richtext",
+        "id" : "title",
+        "label" : "Title"
+      },
+        {
+        "type" : "color",
+        "id" : "text_color",
+        "label" : "Text Color",
+        "default": "#ff4d20"
+      },
+      {
+        "type" : "text",
+        "id" : "heading",
+        "label" : "Heading"
+      },
+
+        {
+        "type" : "inline_richtext",
+        "id" : "desc",
+        "label" : "DESC"
+      }
+    ],
+    "presets" : [
+      {
+      "name" : "Block Heading"
+    }
+    ] 
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+

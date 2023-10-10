@@ -13,7 +13,7 @@
 
 <div class="customeContainer owl-carousel">
   {% for block in section.blocks %}
-    <div class="bg-gray-f6  py-5 px-7 rounded-3xl flex gap-10 xs:gap-6 lg:gap-8  relative">
+    <div class="bg-gray-f6  py-5 px-7 rounded-3xl flex gap-10 xs:gap-4 lg:gap-6  relative">
       <div class="">
         <span class="text-2xl font-bold text-black-17 mb-4 inline-block">
           {{ block.settings.item_heading }}</span>
@@ -24,7 +24,7 @@
         </span>
       </div>
       <img
-        class="h-[10rem] "
+        class="h-28 xs:h-28 md:h-24 xl:h-28"
         src="{{ block.settings.image | img_url : "master" }}"
         alt=""
         loading="lazy">
@@ -32,7 +32,48 @@
 
   {% endfor %}
 </div>
+ {%  style  %} 
 
+.owl-next > span {
+    color: #fff;
+  }
+  .owl-prev {
+    width: 29px;
+    height: 29px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1) !important;
+  }
+  .owl-prev > span {
+    color: #fff;
+  }
+  .owl-nav {
+    position: absolute;
+    top: -25%;
+    right: 0;
+    display: flex;
+    gap: 5px;
+  }
+  .owl-prev:active,
+  .owl-prev:hover {
+    background-color: #151515 !important;
+  }
+  .owl-next:active,
+  .owl-next:hover {
+    background-color: #151515 !important;
+  }
+  .show1 {
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .owl-carousel .owl-item img {
+    width: auto !important;
+  }
+  {% endstyle %} 
 
 {% schema %}
   {
@@ -100,6 +141,7 @@
 {% endschema %}
 <script>
   window.number_columns = {{ section.settings.num_columns}};
+  console.log(window.number_columns)
 </script>
 {{ "jquery.min.js" | asset_url | script_tag }}
 {{ "owl.carousel.min.js" | asset_url | script_tag }}
