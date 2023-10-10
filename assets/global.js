@@ -15,6 +15,7 @@ OVERLAY.onclick = function () {
   MENU_MOBIE.classList.toggle('show');
   OVERLAY.classList.toggle('show1');
 };
+console.log(window.number_columns);
 $('.customeContainer').owlCarousel({
   loop: true,
   margin: 30,
@@ -29,10 +30,10 @@ $('.customeContainer').owlCarousel({
       items: 2,
     },
     768: {
-      item: 3,
+      items: 3,
     },
     1024: {
-      items: 4,
+      items: window.number_columns,
     },
   },
 });
