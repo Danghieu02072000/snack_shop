@@ -23,45 +23,7 @@
   .copy-right__border {
     border-top: solid 0.8px rgba(242, 239, 221, 0.8);
   }
-  .owl-next > span {
-    color: #fff;
-  }
-  .owl-prev {
-    width: 29px;
-    height: 29px;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.1) !important;
-  }
-  .owl-prev > span {
-    color: #fff;
-  }
-  .owl-nav {
-    position: absolute;
-    top: -25%;
-    right: 0;
-    display: flex;
-    gap: 5px;
-  }
-  .owl-prev:active,
-  .owl-prev:hover {
-    background-color: #151515 !important;
-  }
-  .owl-next:active,
-  .owl-next:hover {
-    background-color: #151515 !important;
-  }
-  .show1 {
-    z-index: 10;
-    opacity: 0;
-    visibility: hidden;
-  }
 
-  .owl-carousel .owl-item img {
-    width: auto !important;
-  }
   .bg-radion {
     background-image: linear-gradient(113deg, #feb618 50%, #2fb652 50%);
   }
