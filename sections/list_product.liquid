@@ -1,0 +1,173 @@
+
+{%   liquid   
+  assign col = "grid-template-columns: auto"
+  assign column = section.settings.column_product
+  case column
+  when 1 
+   assign col = "grid-template-columns: 1fr"
+  when 2 
+   assign col = "grid-template-columns: 1fr 1fr"
+  when 3 
+   assign col = "grid-template-columns: 1fr 1fr 1fr"
+  when 4
+   assign col = "grid-template-columns: 1fr 1fr 1fr 1fr"
+  endcase
+
+%}
+
+{%   liquid   
+  assign aspect = "aspect-ratio: auto"
+  assign aspect_value = section.settings.aspect_ratio
+  case aspect_value
+  when "square" 
+   assign aspect = "aspect-ratio: 1/1"
+  when "portrait" 
+   assign aspect = "aspect-ratio: 0.8"
+  when "auto"
+   assign aspect = "aspect-ratio: auto"
+  endcase
+
+%}
+
+
+<div class="px-12" style="background-color: {{ section.settings.color_scheme.settings.background }}; color:{{ section.settings.color_scheme.settings.text }}; padding-top: {{ section.settings.padding_top }}px ; padding-bottom: {{ section.settings.padding_bottom }}px">
+  <div class="max-w-xl mx-auto">
+  <h2 class=" font-bold mt-5" style="font-size: {{ section.settings.size_heading }}px"> {{ collections['frontpage'].title }}</h2>
+
+
+  {% paginate collections['frontpage'].products by section.settings.max_product  %}
+    <div class="grid  gap-5 mt-10 gap-y-10" style="{% liquid echo col %}">
+    {% for product in collections['frontpage'].products %}
+      <a href="{{ product.url }}" class="flex flex-col gap-5 ">
+        <div class="w-full rounded-xl overflow-hidden aspect-[0.8] shadow-xl border border-slate-600 border-solid " style=" {%  liquid echo  aspect %} ;">
+          <img src="{{ product.featured_image |  img_url: 'master' }}" alt="" class="object-cover hover:scale-105 transition-all duration-300 w-full h-full">
+        </div>
+        <div class="flex flex-col gap-2 flex-1 justify-end">
+          <h3 class="font-highlights hover:underline transition-all " style="font-size: {{ section.settings.size_title }}px">{{ product.title }}</h3>
+          <span class=" font-default text-base inline-block">{{ product.price | money }}</span>
+        </div>
+      </a>
+    {% endfor %}
+    </div>
+    <div class="flex justify-center gap-3 mt-10">
+      {% if paginate.previous %}
+        <a href="{{ paginate.previous.url }}" class="flex justify-center items-center "><svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24">
+        <polyline fill="none" stroke="#FCD34D" stroke-width="2" points="7 2 17 12 7 22" transform="matrix(-1 0 0 1 24 0)"/>
+      </svg></a>
+      {% endif %}
+      {% for part in paginate.parts -%}
+        {% if part.is_link -%}
+          <div class=" h-8 w-8 bg-white flex justify-center items-center text-amber-300 border border-solid border-amber-300 hover:bg-amber-300 hover:text-white transition-all">
+
+            <a href="{{ part.url }}" class="w-full h-full flex justify-center items-center">{{ part.title }}</a>
+          </div>
+        {%- else -%}
+          <div class="h-8 w-8 bg-amber-300 flex justify-center items-center text-white border border-solid border-slate-200 ">{{ part.title }} </div>
+        {% endif %}
+        
+      {%- endfor %}
+      {% if paginate.next %}
+        <a href="{{ paginate.next.url }}" class="flex justify-center items-center "> 
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#FCD34D" height="15px" width="15px" version="1.1" id="XMLID_287_" viewBox="0 0 24 24" xml:space="preserve">
+          <g id="next">
+            <g>
+              <polygon points="6.8,23.7 5.4,22.3 15.7,12 5.4,1.7 6.8,0.3 18.5,12   "/>
+            </g>
+          </g>
+          </svg> </a>
+      {% endif %}
+    </div>
+  {% endpaginate %}
+
+</div>
+</div>
+{% schema %}
+  {
+    "name": "collection",
+    "tag": "section",
+    "class": "collection",
+    "settings": [
+        {
+          "type": "range",
+          "id": "column_product",
+          "label": "Column Product",
+          "default": 4,
+          "min": 1,
+          "max": 4,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "max_product",
+          "label": "Max Product",
+          "default": 8,
+          "min": 4,
+          "max": 20,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "size_heading",
+          "label": "Size Heading",
+          "default": 36,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "size_title",
+          "label": "Size Title Product",
+          "default": 24,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "Color Scheme",
+          "default": "background-1"
+        },
+        {
+          "type":"select",
+          "id": "aspect_ratio",
+          "label": "Aspect Ratio Image",
+          "options": [
+            {
+              "value": "square",
+              "label": "Square"
+            },
+            {
+              "value": "portrait",
+              "label": "Portrait"
+            },
+            {
+              "value": "auto",
+              "label": "Auto"
+            }
+          ],
+          "default": "square"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Padding Top",
+          "default": 50,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Padding Bottom",
+          "default": 50,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+        
+    ]
+  }
+{% endschema %}
