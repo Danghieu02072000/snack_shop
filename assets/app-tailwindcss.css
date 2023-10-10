@@ -561,6 +561,10 @@ body {
   border-top: solid 0.8px rgba(242, 239, 221, 0.8);
 }
 
+.bg-radion {
+  background-image: linear-gradient(113deg, #feb618 50%, #2fb652 50%);
+}
+
 .section_wrapper {
   max-width: 120rem;
   padding: 0 50px;
@@ -590,6 +594,98 @@ body {
 
 .top-0 {
   top: 0px;
+}
+
+.bottom-3 {
+  bottom: 0.75rem;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.right-12 {
+  right: 3rem;
+}
+
+.right-16 {
+  right: 4rem;
+}
+
+.right-24 {
+  right: 6rem;
+}
+
+.right-40 {
+  right: 10rem;
+}
+
+.right-\[36rem\] {
+  right: 36rem;
+}
+
+.top-10 {
+  top: 2.5rem;
+}
+
+.top-14 {
+  top: 3.5rem;
+}
+
+.top-24 {
+  top: 6rem;
+}
+
+.top-8 {
+  top: 2rem;
+}
+
+.right-60 {
+  right: 15rem;
+}
+
+.right-80 {
+  right: 20rem;
+}
+
+.right-9 {
+  right: 2.25rem;
+}
+
+.right-96 {
+  right: 24rem;
+}
+
+.top-1 {
+  top: 0.25rem;
+}
+
+.top-16 {
+  top: 4rem;
+}
+
+.top-12 {
+  top: 3rem;
+}
+
+.top-6 {
+  top: 1.5rem;
+}
+
+.top-20 {
+  top: 5rem;
+}
+
+.top-2 {
+  top: 0.5rem;
+}
+
+.bottom-4 {
+  bottom: 1rem;
+}
+
+.bottom-2 {
+  bottom: 0.5rem;
 }
 
 .z-10 {
@@ -647,14 +743,6 @@ body {
 
 .mt-6 {
   margin-top: 1.5rem;
-}
-
-.mt-20 {
-  margin-top: 5rem;
-}
-
-.mt-1 {
-  margin-top: 0.25rem;
 }
 
 .mt-14 {
@@ -783,26 +871,6 @@ body {
 
 .max-w-xl {
   max-width: 1175px;
-}
-
-.max-w-\[55\] {
-  max-width: 55;
-}
-
-.max-w-\[55\%\] {
-  max-width: 55%;
-}
-
-.max-w-\[\] {
-  max-width: ;
-}
-
-.max-w-\[85\$\] {
-  max-width: 85$;
-}
-
-.max-w-\[7\] {
-  max-width: 7;
 }
 
 .max-w-\[75\%\] {
@@ -979,6 +1047,26 @@ body {
   padding-bottom: 1.25rem;
 }
 
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
 .pt-2 {
   padding-top: 0.5rem;
 }
@@ -987,16 +1075,17 @@ body {
   padding-top: 1rem;
 }
 
+
 .pt-8 {
   padding-top: 2rem;
 }
 
-.pb-3 {
-  padding-bottom: 0.75rem;
-}
-
 .text-center {
   text-align: center;
+}
+
+.text-start {
+  text-align: start;
 }
 
 .font-highlights {
@@ -1036,11 +1125,6 @@ body {
 .text-xl {
   font-size: 20px;
   line-height: 28px;
-}
-
-.text-5xl {
-  font-size: 48px;
-  line-height: 54px;
 }
 
 .text-6xl {
@@ -1180,13 +1264,12 @@ body {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-@media (min-width: 390px) {
-  .\32xs\:h-24 {
-    height: 6rem;
-  }
-}
 
 @media (min-width: 500px) {
+  .xs\:block {
+    display: block;
+  }
+
   .xs\:h-5 {
     height: 1.25rem;
   }
@@ -1203,8 +1286,6 @@ body {
     width: 1.25rem;
   }
 
-  .xs\:max-w-\[55\%\] {
-    max-width: 55%;
   }
 
   .xs\:grid-cols-2 {
@@ -1240,6 +1321,54 @@ body {
 }
 
 @media (min-width: 640px) {
+  .sm\:right-60 {
+    right: 15rem;
+  }
+
+  .sm\:top-0 {
+    top: 0px;
+  }
+
+  .sm\:right-52 {
+    right: 13rem;
+  }
+
+  .sm\:right-48 {
+    right: 12rem;
+  }
+
+  .sm\:right-4 {
+    right: 1rem;
+  }
+
+  .sm\:-right-44 {
+    right: -11rem;
+  }
+
+  .sm\:right-40 {
+    right: 10rem;
+  }
+
+  .sm\:right-44 {
+    right: 11rem;
+  }
+
+  .sm\:top-10 {
+    top: 2.5rem;
+  }
+
+  .sm\:top-16 {
+    top: 4rem;
+  }
+
+  .sm\:top-4 {
+    top: 1rem;
+  }
+
+  .sm\:top-8 {
+    top: 2rem;
+  }
+
   .sm\:mt-20 {
     margin-top: 5rem;
   }
@@ -1266,10 +1395,6 @@ body {
 
   .sm\:max-w-\[55\%\] {
     max-width: 55%;
-  }
-
-  .sm\:max-w-\[60\%\] {
-    max-width: 60%;
   }
 
   .sm\:gap-20 {
@@ -1361,6 +1486,10 @@ body {
 }
 
 @media (min-width: 1024px) {
+  .lg\:right-80 {
+    right: 20rem;
+  }
+
   .lg\:mt-8 {
     margin-top: 2rem;
   }
@@ -1385,17 +1514,24 @@ body {
     max-width: 515px;
   }
 
+  .lg\:max-w-\[350px\] {
+    max-width: 350px;
+  }
+
   .lg\:gap-8 {
     gap: 2rem;
   }
 
-  .lg\:gap-6 {
-    gap: 1.5rem;
-  }
+ 
 
   .lg\:text-6xl {
     font-size: 52px;
     line-height: 58px;
+  }
+
+  .lg\:text-4xl {
+    font-size: 36px;
+    line-height: 40px;
   }
 }
 
@@ -1410,6 +1546,26 @@ body {
 
   .xl\:gap-20 {
     gap: 5rem;
+  }
+
+  .xl\:px-24 {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .xl\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .xl\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .xl\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 
   .xl\:text-7xl {
