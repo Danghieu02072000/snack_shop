@@ -12,7 +12,7 @@
 %}
 <div class="footer__wrapepr" style="background-color: {{ section.settings.color_scheme.settings.background }}; color:{{ section.settings.color_scheme.settings.text }}; padding-top: {{ section.settings.padding_top }}px ; padding-bottom: {{ section.settings.padding_bottom }}px">
 <div class="footer__container max-w-xl mx-auto px-12">
-  <div class="grid gap-5 " style="{% liquid echo col %}">
+  <div class="grid gap-5 col_heading" style=" ">
     {% for block in section.blocks %}
       {% case block.type %}
         {% when "text" %}
@@ -26,7 +26,7 @@
           <h2 class="text-2xl">{{ block.settings.heading }}</h2>
           <ul class="gap-3 flex  text-sm flex-col mt-4">
             {% for link in block.settings.navigation.links -%}
-              <li>{{ link.title | link_to: link.url }}</li>
+              <li class="hover:underline">{{ link.title | link_to: link.url }}</li>
             {%- endfor %}
           </ul>
         </div>
@@ -46,6 +46,19 @@
   <small class="copyright__content">{{ powered_by_link }}</small>
   </div>
 </div>
+
+<style>
+  .col_heading {
+    {% liquid echo col %}
+  }
+  @media only screen and (max-width: 600px) 
+  { 
+  .col_heading {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  } 
+  }
+</style>
 {% schema %}
   {
     "name": "Footer",

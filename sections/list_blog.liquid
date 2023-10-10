@@ -1,15 +1,21 @@
-<div class="grid grid-cols-3 gap-8">
-{% for article in blogs.news.articles %}
-    <a class="{{ article.url }}">
-      <div class=" aspect-video w-full">
-        <img src="{{ article.image | img_url : "master" }}" alt="" class="w-full h-full object-cover">
-        {{- article.title }}
+<div class="px-12" style="background-color: {{ section.settings.color_scheme.settings.background }}; color:{{ section.settings.color_scheme.settings.text }}; padding-top: {{ section.settings.padding_top }}px ; padding-bottom: {{ section.settings.padding_bottom }}px">
+<div class="max-w-xl mx-auto">
+  <h2 class="mt-5 font-bold block" style="font-size: {{ section.settings.size_heading }}px;">{{  blogs.food-blogs.title }}</h2>
+<div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-8 mt-10">
+{% paginate  blogs.food-blogs.articles by section.settings.column_blogs %}
+{% for article in blogs.food-blogs.articles %}
+    <a href="{{ article.url }}" class=" block group ">
+      <div class=" aspect-video w-full border border-solid border-slate-300 rounded-md shadow-2xl overflow-hidden">
+        <img src="{{ article.image | img_url : "master" }}" alt="" class="w-full h-full object-cover hover:scale-105 transition-all duration-300">
       </div>
+      <h3 class="font-highlights mt-5 block leading-8 group-hover:underline transition-all duration-300" style="font-size: {{ section.settings.size_title }}px ">{{- article.title }}</h3>
+      <span class="font-highlights text-xs mt-2 inline-block "> {{- article.created_at  | date: '%B %d, %Y'}}</span>
+      <p class="text-sm mt-3">{{ article.excerpt | strip_html | truncatewords: 30 }}</p>
     </a>
-
-
-
 {% endfor %}
+{% endpaginate %}
+</div>
+</div>
 </div>
 {% schema %}
   {
@@ -19,36 +25,27 @@
     "settings": [
         {
           "type": "range",
-          "id": "column_product",
-          "label": "Column Product",
-          "default": 4,
+          "id": "size_heading",
+          "label": "Size Heading",
+          "default": 30,
+          "min": 1,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "column_blogs",
+          "label": "Column Blogs",
+          "default": 3,
           "min": 1,
           "max": 4,
           "step": 1
         },
         {
           "type": "range",
-          "id": "max_product",
-          "label": "Max Product",
-          "default": 8,
-          "min": 4,
-          "max": 20,
-          "step": 1
-        },
-        {
-          "type": "range",
-          "id": "size_heading",
-          "label": "Size Heading",
-          "default": 36,
-          "min": 0,
-          "max": 100,
-          "step": 1
-        },
-        {
-          "type": "range",
           "id": "size_title",
           "label": "Size Title Product",
-          "default": 24,
+          "default": 30,
           "min": 0,
           "max": 100,
           "step": 1
@@ -58,26 +55,6 @@
           "id": "color_scheme",
           "label": "Color Scheme",
           "default": "background-1"
-        },
-        {
-          "type":"select",
-          "id": "aspect_ratio",
-          "label": "Aspect Ratio Image",
-          "options": [
-            {
-              "value": "square",
-              "label": "Square"
-            },
-            {
-              "value": "portrait",
-              "label": "Portrait"
-            },
-            {
-              "value": "auto",
-              "label": "Auto"
-            }
-          ],
-          "default": "square"
         },
         {
           "type": "range",
