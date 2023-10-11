@@ -702,10 +702,6 @@ body {
   margin-top: 0.5rem;
 }
 
-.mt-20 {
-  margin-top: 5rem;
-}
-
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -1230,11 +1226,6 @@ body {
   line-height: 58px;
 }
 
-.text-7xl {
-  font-size: 62px;
-  line-height: 68px;
-}
-
 .text-base {
   font-size: 16px;
   line-height: 24px;
@@ -1335,6 +1326,11 @@ body {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .shadow {
