@@ -5,13 +5,199 @@
       "settings": {
         "title": "Hungry?",
         "heading": "Wait a minute for delicious.",
-        "desc": "Best cooks and best delivery guys all at your service. Hot tasty food will reach you in 20mins.",
+        "desc": "<p>Best cooks and best delivery guys all at your service. Hot tasty food will reach you in 20mins.<\/p>",
         "img": "shopify:\/\/shop_images\/Content.png",
         "img_btn": "shopify:\/\/shop_images\/icon_location.png"
+      }
+    },
+    "ec3b8065-e84d-4176-b020-bf4a263032bc": {
+      "type": "slick-slider",
+      "blocks": {
+        "2afcc18c-8bc7-4618-835b-d478f9b0e85a": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "image": "shopify:\/\/shop_images\/img_p1.png",
+            "item_heading": "Pizza",
+            "item_text": "Starting",
+            "item_price": "12000"
+          }
+        },
+        "66a34741-50bb-442b-8161-441a8a35a92a": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "image": "shopify:\/\/shop_images\/img-p3.png",
+            "item_heading": "Chicken",
+            "item_text": "Starting",
+            "item_price": "40000"
+          }
+        },
+        "48798843-148d-4a14-8776-25f9f217b6bb": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "image": "shopify:\/\/shop_images\/img-p4.png",
+            "item_heading": "French",
+            "item_text": "Starting",
+            "item_price": "50000"
+          }
+        },
+        "a684b49d-bd87-4cb6-a62e-ac5a25c3cf71": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "image": "shopify:\/\/shop_images\/img-p2.png",
+            "item_heading": "Drinks",
+            "item_text": "Starting",
+            "item_price": "70000"
+          }
+        },
+        "a3fa2f8a-0e5d-4895-8a6d-06df4a62602f": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "image": "shopify:\/\/shop_images\/img_p1.png",
+            "item_heading": "Pizza",
+            "item_text": "Starting",
+            "item_price": "40000"
+          }
+        },
+        "07730cd4-8b98-471e-aedf-ef5b8b936b53": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "image": "shopify:\/\/shop_images\/img-p3.png",
+            "item_heading": "Chicken",
+            "item_text": "Starting",
+            "item_price": "50000"
+          }
+        }
+      },
+      "block_order": [
+        "2afcc18c-8bc7-4618-835b-d478f9b0e85a",
+        "66a34741-50bb-442b-8161-441a8a35a92a",
+        "48798843-148d-4a14-8776-25f9f217b6bb",
+        "a684b49d-bd87-4cb6-a62e-ac5a25c3cf71",
+        "a3fa2f8a-0e5d-4895-8a6d-06df4a62602f",
+        "07730cd4-8b98-471e-aedf-ef5b8b936b53"
+      ],
+      "settings": {
+        "heading": "Food near me",
+        "icon_heading": "shopify:\/\/shop_images\/fire.png",
+        "num_columns": 4
+      }
+    },
+    "e29ba30a-2090-458b-8817-46f9498b167a": {
+      "type": "heading_block",
+      "settings": {
+        "title": "Hungry?",
+        "text_color": "#ff4d20",
+        "heading": "Wait a minute for delicious.",
+        "desc": ""
+      }
+    },
+    "ef50cc14-c158-480a-b95f-6035c84a6aad": {
+      "type": "multi_column",
+      "blocks": {
+        "3d0e63ec-6854-4481-8411-6160bf771256": {
+          "type": "column",
+          "settings": {
+            "item_title": "Easy to order",
+            "item_text": "<p>n restaurant-controlled online food ordering, the restaurant ..<\/p>",
+            "item_img": "shopify:\/\/shop_images\/img_note.png"
+          }
+        },
+        "9b010653-e7c7-49cc-a693-c8a3f9fb799b": {
+          "type": "column",
+          "settings": {
+            "item_title": "Easy to order",
+            "item_text": "<p>In restaurant-controlled online food ordering, the restaurant ..<\/p>",
+            "item_img": "shopify:\/\/shop_images\/img_map.png"
+          }
+        },
+        "998121b7-f40b-46c3-8705-025830472166": {
+          "type": "column",
+          "settings": {
+            "item_title": "Easy to order",
+            "item_text": "<p>n restaurant-controlled online food ordering, the restaurant ..<\/p>",
+            "item_img": "shopify:\/\/shop_images\/img_sawich.png"
+          }
+        }
+      },
+      "block_order": [
+        "3d0e63ec-6854-4481-8411-6160bf771256",
+        "9b010653-e7c7-49cc-a693-c8a3f9fb799b",
+        "998121b7-f40b-46c3-8705-025830472166"
+      ],
+      "settings": {
+      }
+    },
+    "f1bf0398-ff3c-44d0-80e7-ba01622f0fbb": {
+      "type": "banner",
+      "settings": {
+        "title": "Have you got our offer?",
+        "desc": "Best cooks and best delivery guys all at your service. Hot tasty food",
+        "item_1": "shopify:\/\/shop_images\/img-bg1.png",
+        "item_2": "shopify:\/\/shop_images\/img-bg2.png",
+        "item_3": "shopify:\/\/shop_images\/img-bg3.png",
+        "item_4": "shopify:\/\/shop_images\/img-bg4.png"
+      }
+    },
+    "5f5bffc8-3ab3-46e2-bd8b-96e06a8a3d6b": {
+      "type": "heading_block",
+      "settings": {
+        "title": "Popular Menu",
+        "text_color": "#ff4d20",
+        "heading": "Wait a minute for delicious.",
+        "desc": ""
+      }
+    },
+    "89230cbf-3d8f-4f4f-adb6-3416104c6788": {
+      "type": "list_product",
+      "settings": {
+        "column_product": 4,
+        "tablet-column_product": 3,
+        "mobie-column_product": 2,
+        "max_product": 8,
+        "size_heading": 36,
+        "size_title": 24,
+        "color_scheme": "",
+        "aspect_ratio": "square",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "b5b61b0a-05f5-4fae-b9de-665c1b632518": {
+      "type": "heading_block",
+      "settings": {
+        "title": "Newar Me",
+        "text_color": "#ff4d20",
+        "heading": "Our regular updated new blogs.",
+        "desc": "Best cooks and best delivery guys all at your service. Hot tasty food will reach you in 20mins."
+      }
+    },
+    "a3ed2791-9d43-4194-a0ad-b3cf8f8b8fc4": {
+      "type": "list_blog",
+      "settings": {
+        "size_heading": 30,
+        "column_blogs": 3,
+        "size_title": 30,
+        "color_scheme": "inverse",
+        "padding_top": 50,
+        "padding_bottom": 50
       }
     }
   },
   "order": [
-    "61d32215-6e44-4f00-adbb-c1f53c471aee"
+    "61d32215-6e44-4f00-adbb-c1f53c471aee",
+    "ec3b8065-e84d-4176-b020-bf4a263032bc",
+    "e29ba30a-2090-458b-8817-46f9498b167a",
+    "ef50cc14-c158-480a-b95f-6035c84a6aad",
+    "f1bf0398-ff3c-44d0-80e7-ba01622f0fbb",
+    "5f5bffc8-3ab3-46e2-bd8b-96e06a8a3d6b",
+    "89230cbf-3d8f-4f4f-adb6-3416104c6788",
+    "b5b61b0a-05f5-4fae-b9de-665c1b632518",
+    "a3ed2791-9d43-4194-a0ad-b3cf8f8b8fc4"
   ]
 }

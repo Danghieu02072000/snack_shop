@@ -1,8 +1,8 @@
 
-<div class="px-12" style="background-color: {{ section.settings.color_scheme.settings.background }}; color:{{ section.settings.color_scheme.settings.text }}; padding-top: {{ section.settings.padding_top }}px ; padding-bottom: {{ section.settings.padding_bottom }}px">
+<div class="" style="background-color: {{ section.settings.color_scheme.settings.background }}; color:{{ section.settings.color_scheme.settings.text }}; padding-top: {{ section.settings.padding_top }}px ; padding-bottom: {{ section.settings.padding_bottom }}px">
       {% case section.settings.logo_position  %}
       {% when 'middle-left' %}
-        <nav class="flex justify-between items-center  max-w-xl mx-auto " >
+        <nav class="flex justify-between items-center  max-w-xl mx-auto px-12" >
                   <a href="/" class="flex gap-3 " id="logo">
                   <img src="{{ section.settings.img_logo1 | img_url: 'master' }}" alt="" style="height:{{ section.settings.size_logo1}}px" >
                   <img src="{{ section.settings.img_logo2 | img_url: 'master' }}" alt="" style="height:{{ section.settings.size_logo2}}px"></a>
@@ -94,7 +94,6 @@
             <div id="overlay" class="absolute top-0 left-0 w-full h-[100vh] bg-black bg-opacity-80  show1 duration-500 md:hidden z-10">
             </div>
 </div>
-
 {% schema %}
   {
     "name": "Header",

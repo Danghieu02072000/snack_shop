@@ -128,7 +128,41 @@
       },
       "footer": {
         "type": "footer",
+        "blocks": {
+          "44bd4965-2c76-4701-a342-b3bdf04bf850": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Besnik.png",
+              "size_img1": 26,
+              "img_position": "start"
+            }
+          },
+          "fea5bcaf-58d6-43c8-93bb-5309f53a071c": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Quick Link",
+              "navigation": "main-menu",
+              "position_text": "start"
+            }
+          },
+          "77a49c07-38f6-42f4-be72-2308dd90cf27": {
+            "type": "text",
+            "settings": {
+              "heading": "Heading",
+              "position_heading": "start",
+              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "44bd4965-2c76-4701-a342-b3bdf04bf850",
+          "fea5bcaf-58d6-43c8-93bb-5309f53a071c",
+          "77a49c07-38f6-42f4-be72-2308dd90cf27"
+        ],
         "settings": {
+          "color_scheme": "",
+          "padding_top": 25,
+          "padding_bottom": 25
         }
       }
     },
@@ -362,21 +396,7 @@
       "cart_type": "notification",
       "show_vendor": false,
       "show_cart_note": false,
-      "cart_drawer_collection": "",
-      "sections": {
-        "main-password-header": {
-          "type": "main-password-header",
-          "settings": {
-            "color_scheme": "background-1"
-          }
-        },
-        "main-password-footer": {
-          "type": "main-password-footer",
-          "settings": {
-            "color_scheme": "background-1"
-          }
-        }
-      }
+      "cart_drawer_collection": ""
     }
   }
 }
