@@ -1,6 +1,11 @@
 {
   "sections": {
+    "main": {
+      "type": "main_product",
+      "show_vendor": true
+    }
   },
-  "order": [
+  "order": [ 
+    "main"
   ]
 }

@@ -7,6 +7,7 @@
     @apply font-default text-base m-0 p-0 box-border;
   }
 }
+
 @layer components {
   .show {
     transform: translateX(-120%);

@@ -1,0 +1,113 @@
+
+<div class="max-w-xl mx-auto" style=" padding-top: {{ section.settings.padding_top}}px; padding-bottom: {{ section.settings.padding_bottom}}px; ">
+  <h1 class=" text-center font-highlights blog__heading">{{ blog.title }}</h1>
+  <h3 class="font-highlights text-3xl mt-5 "> Số bài viết : {{ blog.articles_count }} bài  viết</h3>
+  <div class="flex flex-row flex-wrap gap-10 mt-14" >
+    {% for article in blog.articles limit: 9 %} 
+      {% if forloop.index == 1 or forloop.index == 4 or forloop.index == 7 %}
+        <div class="w-full flex flex-col justify-center items-center group">
+          <div class=" aspect-video w-full border border-solid border-slate-300 rounded-3xl shadow-2xl overflow-hidden">
+            <img src="{{ article.image | img_url : "master" }}" alt="" class="w-full h-full object-cover hover:scale-105 transition-all duration-500">
+          </div>
+          <h3 class="font-highlights mt-7 block leading-8 group-hover:underline transition-all duration-300 text-4xl text-center">{{- article.title }}</h3>
+          <div class="mt-2">
+            <span class="font-highlights text-xs  inline-block "> {{- article.created_at  | date: '%B %d, %Y'|  upcase}}</span> - 
+            <span class=" text-xs mt-2 inline-block "> {{- article.author }}</span>
+          </div>
+
+          <p class="text-sm mt-1 max-w-[85%] text-center">{{ article.excerpt | strip_html | truncatewords: 20 }}</p>
+        </div>
+      {% else %}
+      <div class="group blog_mini" >
+        <div class=" aspect-video w-full border border-solid border-slate-300 rounded-2xl shadow-2xl overflow-hidden ">
+          <img src="{{ article.image | img_url : "master" }}" alt="" class="w-full h-full object-cover hover:scale-105 transition-all duration-500">
+        </div>
+        <h3 class="font-highlights mt-5 block leading-8 group-hover:underline transition-all duration-300" style="font-size: {{ section.settings.size_title }}px ">{{- article.title }}</h3>
+        <div class="mt-2">
+          <span class="font-highlights text-xs  inline-block "> {{- article.created_at  | date: '%B %d, %Y' |  upcase}}</span> - 
+          <span class=" text-xs mt-2 inline-block "> {{- article.author }}</span>
+        </div>
+        <p class="text-sm mt-3">{{ article.excerpt | strip_html | truncatewords: 20 }}</p>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Main Blogs",
+    "tag": "section",
+    "class": "section_wrapper",
+    "settings": [
+        {
+          "type": "range",
+          "id": "size_heading_desktop",
+          "label": "Size Title Blog Desktop",
+          "default": 56,
+          "min": 1,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "size_heading_mobile",
+          "label": "Size Title Blog Mobie",
+          "default": 40,
+          "min": 1,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "size_title",
+          "label": "Size Title Product",
+          "default": 30,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Padding Top",
+          "default": 50,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Padding Bottom",
+          "default": 50,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+    ],
+    "presets": [
+      {
+        "name": "Main Blogs"
+      }
+    ]
+  }
+{% endschema %}
+<style>
+  .blog_mini {
+     width: calc(50% - 40px);
+  }
+  .blog__heading {
+    font-size: {{ section.settings.size_heading_desktop }}px;
+    line-height: {{ section.settings.size_heading_desktop }}px
+  }
+  @media (max-width: 600px) {
+    .blog_mini {
+      width: 100%
+    }
+    .blog__heading {
+    font-size: {{ section.settings.size_heading_mobile }}px;
+    line-height: {{ section.settings.size_heading_mobile }}px
+  }
+  }
+</style>

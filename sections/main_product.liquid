@@ -1,0 +1,183 @@
+
+{%   liquid   
+  assign position_media = "grid-column: 2;"
+  assign media_pt = section.settings.change_column
+  case media_pt
+  when "left"
+   assign position_media = ""
+  when 2 
+   assign position_media = "grid-column: 2"
+  endcase
+
+%}
+
+<div class="max-w-xl mx-auto ">
+<div class="grid grid-cols-1 gap-14 md:grid-cols-2" style="padding-top: {{ section.settings.padding_top }}px ; padding-bottom: {{ section.settings.padding_bottom }}px; ">
+{% if section.settings.img_media == "mini" %}
+  <div class="flex flex-col justify-start items-center" style="grid-row: 1; {% liquid echo position_media %};">
+    <div class="w-[90%] aspect-[1.3] mx-auto overflow-hidden rounded-2xl border border-slate-300 border-solid shadow-2xl" >
+      <img src="{{ product.featured_image |  img_url : "master"  }}" alt="" class="w-full h-full object-cover ">
+    </div>
+    <div class="gap-8 grid grid-cols-3 w-[90%] mx-auto mt-9">
+      {% for img in product.images %}
+        <div class="aspect-[1.2] overflow-hidden rounded-2xl border border-slate-500 border-solid shadow-2xl">
+          <img src="{{ img | img_url : "master" }}" alt="" class="w-full h-full object-cover">
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% else %}
+  <div class="grid grid-cols-2 gap-10 " style="grid-row: 1; {% liquid echo position_media %};">
+      {% for img in product.images %}
+        <div class="aspect-[1.2] overflow-hidden rounded-2xl border border-slate-500 border-solid shadow-2xl">
+          <img src="{{ img | img_url : "master" }}" alt="" class="w-full h-full object-cover">
+        </div>
+      {% endfor %}
+  </div>
+{% endif %}
+  <div class="flex justify-start items-start flex-col" ">
+    {% form 'cart' , cart %}
+      <h2 class="text-5xl font-highlights font-bold product__title" >{{ product.title }}</h2>
+      <span class="text-3xl font-semibold mt-7 inline-block">{{ product.price |  money}}</span>
+      <div class="mt-5 flex flex-col w-1/2 sm:w-1/3 md:w-1/2 lg:w-1/3">
+        <label for="size" class="text-sm font-highlights text-slate-600" >Size</label>
+        <select name="id" class="mt-2 border border-slate-600 rounded-2xl p-2  id="size" style="border-width: 2px;">
+          {% for variant in product.variants %}
+            <option value="{{ variant.id }}"
+              {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
+            >
+              {{ variant.title }} - {{ variant.price | money }}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="mt-6">
+        <label for="my-input" class="text-sm font-highlights text-slate-600"> Quantity</label>
+        <div class="w-40 h-12 border border-slate-600 rounded-2xl border-solid flex justify-between items-center mt-2 shadow-2xl" style="border-width: 2px;">
+          <button id="decrement" onclick="stepper(this)" class="text-3xl px-4"> - </button>
+          <input type="number" min="1" max="20" step="1" value="1" id="my-input" class="text-xl bg-white text-slate-800 border-none text-center w-14 outline-purple-600" name="quanlity" readonly>
+          <button id="increment" onclick="stepper(this)"class="text-3xl px-4"> + </button>
+      </div>
+      </div>
+    <input type="submit" value="Add to cart" class="mt-6 w-full h-12 bg-red-100 rounded-3xl border border-slate-700 border-solid font-semibold " name="cart" style="box-shadow: 0px 4px inherit;">
+    <button type="submit" class="mt-6 w-full h-12 bg-amber-700 text-white font-semibold rounded-3xl border border-slate-700 border-solid" name="checkout" style="box-shadow: 0px 4px inherit;">Check Out</button>
+      {% endform %}
+
+      <div class="h-0.5 w-full my-10 bg-red-900" ></div>
+      <p>{{ product.description }}</p>
+  </div>
+</div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product Main",
+    "tag": "section",
+    "class": "section_wrapper",
+    "settings": [
+      {
+        "type": "range",
+        "id": "size_heading",
+        "label": "Size Name Product",
+        "default": 54,
+        "min":0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "size_heading_mobie",
+        "label": "Size Name Product Screen Mobie",
+        "default": 40,
+        "min":0,
+        "max": 100,
+        "step": 1
+      },
+      {
+          "type": "select",
+          "id": "img_media",
+          "label": "Change Style Media",
+          "options": [
+            {
+              "value": "two_column",
+              "label": "Two Column"
+            },
+            {
+              "value": "mini",
+              "label": "Image Mini"
+            }
+          ],
+          "default": "mini"
+        },
+      {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Padding Top",
+          "default": 50,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Padding Bottom",
+          "default": 50,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "select",
+          "id": "change_column",
+          "label": "Change Position Media",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Product Main"
+      }
+    ]
+  }
+{% endschema %}
+<style>
+.product__title {
+  font-size: {{ section.settings.size_heading }}px;
+}
+@media (max-width: 600px) {
+  .product__title {
+    font-size: {{ section.settings.size_heading_mobie }}px;
+  }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+</style>
+<script>
+  const myInput = document.getElementById("my-input");
+function stepper(btn){
+    let id = btn.getAttribute("id");
+    let min = myInput.getAttribute("min");
+    let max = myInput.getAttribute("max");
+    let step = myInput.getAttribute("step");
+    let val = myInput.getAttribute("value");
+    let calcStep = (id == "increment") ? (step*1) : (step * -1);
+    let newValue = parseInt(val) + calcStep;
+
+    if(newValue >= min && newValue <= max){
+        myInput.setAttribute("value", newValue);
+    }
+}
+</script>
