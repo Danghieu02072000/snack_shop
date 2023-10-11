@@ -12,6 +12,9 @@
   .show {
     transform: translateX(-120%);
   }
+  .show1 {
+    visibility: hidden;
+  }
   .owl-next {
     width: 29px;
     height: 29px;
@@ -37,5 +40,14 @@
     padding: 0 50px;
     margin: 0 auto;
     margin-top: 40px;
+  }
+
+  @media (max-width: 500px) {
+    .section_wrapper {
+      max-width: 120rem;
+      padding: 0 25px;
+      margin: 0 auto;
+      margin-top: 40px;
+    }
   }
 }

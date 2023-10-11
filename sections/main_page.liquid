@@ -1,0 +1,112 @@
+
+<div class="max-w-xl mx-auto">
+  <div class="max-w-[90%] xs:max-w-[70%] mx-auto" style="padding-top: {{ section.settings.padding_top }}px ; padding-bottom: {{ section.settings.padding_bottom }}px">
+    <h1 class="font-highlights contact__heading ">{{ page.title }}</h1>
+    <div class="mt-5">{{ page.content }}</div>
+    <div class="mt-20">
+      <form action="" method="get">
+      <div class="flex gap-7 flex-col w-full mx-auto">
+        <h2 class="text-3xl font-highlights" style="color: {{ section.settings.heading_color }}">Have a question, comment, or just want to say hi? 👇</h2>
+        <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10 lg:gap-14">
+          <div class="name ">
+            <input type="text" name="comment[author]" value="{{ form.author }}" class="h-14 rounded-2xl hover:shadow-lg transition-all border border-solid w-full px-5 outline-none" placeholder="* Name" style="border-color: {{ section.settings.border_color }} ;border-width: 3px; box-shadow: 0px 7px {{ section.settings.border_color }};">
+          </div>
+          <div class="email ">
+            <input type="email" name="comment[email]" value="{{ form.email }}" class="h-14 rounded-2xl hover:shadow-lg transition-all border border-slate-300 border-solid w-full px-5 outline-none" placeholder="* Email" style="border-color: {{ section.settings.border_color }} ;border-width: 3px; box-shadow: 0px 7px {{ section.settings.border_color }};">
+          </div>
+        </div>
+        <div class="comment">
+          <textarea rows="5" name="comment[body]" placeholder="* Comment" class="rounded-2xl hover:shadow-lg transition-all border border-slate-300 border-solid w-full p-5 outline-none" style="border-color: {{ section.settings.border_color }} ;border-width: 3px; box-shadow: 0px 7px {{ section.settings.border_color }};"></textarea>
+        </div>
+      
+        <div class="submit w-full xs:w-40">
+          <input type="submit" value="Post Comment" class="w-full xs:w-40 h-14 xs:h-12 bg-black text-white flex justify-center items-center rounded-3xl hover:shadow-2xl">
+        </div>
+        </div>
+        </form>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .contact__heading {
+    font-size: {{ section.settings.size_heading_desktop }}px;
+  }
+  @media only screen and (max-width: 500px) {
+  .col_product {
+    font-size: {{ section.settings.size_heading_mobile }}px;
+  }
+  }
+</style>
+{% schema %}
+  {
+    "name": "Main Page",
+    "tag": "section",
+    "class": "section_wrapper",
+    "settings": [
+        {
+          "type": "range",
+          "id": "size_heading_desktop",
+          "label": "Size Title Blog Desktop",
+          "default": 56,
+          "min": 1,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "size_heading_mobile",
+          "label": "Size Title Blog Mobie",
+          "default": 40,
+          "min": 1,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "size_title",
+          "label": "Size Title Product",
+          "default": 30,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Color Title",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "border_color",
+          "label": "Color Border",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Padding Top",
+          "default": 50,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Padding Bottom",
+          "default": 50,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+    ],
+    "presets": [
+      {
+        "name": "Main page"
+      }
+    ]
+  }
+{% endschema %}
