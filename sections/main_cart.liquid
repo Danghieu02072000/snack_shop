@@ -16,15 +16,17 @@
   {% for item in cart.items %}
     <tr class="border border-slate-900 border-solid " style="border-width: 2px;">
       <th class="">
+        <a href="{{ item.url }}" class="group">
         <div class="flex flex-col sm:flex-row gap-3 xs:gap-7 ">
           <div class="w-24 aspect-[0.8] rounded-xl border border-slate-700 overflow-hidden " style="border-width: 2px;">
             <img src="{{ item.image | img_url : "master" }}" alt="" class="w-full h-full object-cover">
           </div>
           <div class="flex items-start flex-col gap-3  ">          
-            <h3 class="font-highlights font-medium text-sm xs:text-lg text-start">{{ item.title }}</h3>
+            <h3 class="font-highlights font-medium text-sm xs:text-lg text-start group-hover:underline">{{ item.title }}</h3>
             <span class="font-highlights font-medium text-sm xs:text-lg" >{{ item.price | money }}</span>
           </div>
         </div>
+        </a>
       </th>
       <th >
         <div class="flex gap-3 justify-center items-center">

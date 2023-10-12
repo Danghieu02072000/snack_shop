@@ -54,9 +54,9 @@
       <div class="mt-6">
         <label for="my-input" class="text-sm font-highlights text-slate-600"> Quantity</label>
         <div class="w-40 h-12 border border-slate-600 rounded-2xl border-solid flex justify-between items-center mt-2 shadow-2xl" style="border-width: 2px;">
-          <button id="decrement" onclick="stepper(this)" class="text-3xl px-4"> - </button>
+          <span id="decrement" onclick="stepper(this)" class="text-3xl px-4 inline-block cursor-pointer"> - </span>
           <input type="number" min="1" max="20" step="1" value="1" id="my-input" class="text-xl bg-white text-slate-800 border-none text-center w-14 outline-purple-600" name="quanlity" readonly>
-          <button id="increment" onclick="stepper(this)"class="text-3xl px-4"> + </button>
+          <span id="increment" onclick="stepper(this)" class="text-3xl px-4 inline-block cursor-pointer"> + </span>
       </div>
       </div>
     <input type="submit" value="Add to cart" class="mt-6 w-full h-12 bg-red-100 rounded-3xl border border-slate-700 border-solid font-semibold " name="cart" style="box-shadow: 0px 4px inherit;">

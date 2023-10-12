@@ -1,9 +1,15 @@
 
-<div class="px-12" style="background-color: {{ section.settings.color_scheme.settings.background }}; color:{{ section.settings.color_scheme.settings.text }}; padding-top: {{ section.settings.padding_top }}px ; padding-bottom: {{ section.settings.padding_bottom }}px">
+<div class="px-5 2xs:px-12" style="background-color: {{ section.settings.color_scheme.settings.background }}; color:{{ section.settings.color_scheme.settings.text }}; padding-top: {{ section.settings.padding_top }}px ; padding-bottom: {{ section.settings.padding_bottom }}px">
       {% case section.settings.logo_position  %}
       {% when 'middle-left' %}
         <nav class="flex justify-between items-center  max-w-xl mx-auto " >
-                  <a href="#" class="flex gap-3 " id="logo">
+                <div class="block md:hidden p-3 "  id="logo"><svg class="svg-icon" viewBox="0 0 20 20">
+                  <path fill="none" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314
+                    c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743
+                    s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314
+                    c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path>
+                </svg></div>
+                  <a href="/" class="flex gap-3 ">
                   <img src="{{ section.settings.img_logo1 | img_url: 'master' }}" alt="" style="height:{{ section.settings.size_logo1}}px" >
                   <img src="{{ section.settings.img_logo2 | img_url: 'master' }}" alt="" style="height:{{ section.settings.size_logo2}}px"></a>
                 <ul class="gap-10 hidden items-center text-sm md:flex">
@@ -12,7 +18,7 @@
                 {%- endfor %}
                 </ul>
                 <div class="flex gap-3 justify-center items-center">
-                    <button class="xs:text-xs xs:px-3 xs:py-2 text-sm  py-3 px-4 bg-black text-white inline-block rounded-xl leading-5 hover:opacity-70 hover:shadow-md transition-all">Sign
+                    <button class="hidden xs:text-xs xs:px-3 xs:py-2 text-sm  py-3 px-4 bg-black text-white xs:inline-block rounded-xl leading-5 hover:opacity-70 hover:shadow-md transition-all">Sign
                         Up</button>
                     <a href="/cart" class="xs:p-[9px] p-[10px] inline-block rounded-xl cursor-pointer" style=" background-color: {{ section.settings.color_scheme.settings.shadow }};  "><img src="{{ 'Icon_cart.png' | asset_url}} " alt="" class="xs:h-5 xs:w-5 h-6 w-6"></a>
                 </div>
@@ -188,3 +194,20 @@
     ]
   }
 {% endschema %}
+<style>
+  .svg-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #000000;
+}
+
+.svg-icon circle {
+  stroke: #000000;
+  stroke-width: 1;
+}
+</style>
