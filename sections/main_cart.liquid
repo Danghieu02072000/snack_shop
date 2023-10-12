@@ -1,7 +1,8 @@
 <div class="max-w-xl mx-auto">
 {% form  "cart", cart%} 
   {% if cart.empty? %}
-    <h2>Cart is Empty</h2>
+    <h2 class="text-center text-2xl xs:text-3xl md:text-4xl font-bold text-red-800 font-highlights">Your Cart is Empty</h2>
+    <a href="/collections/all" class="w-52 h-14 rounded-3xl bg-red-700 text-white flex justify-center items-center mx-auto mt-8 shadow-xl hover:shadow-2xl hover:bg-red-800 transition-all">Continue shopping </a>
   {% else %}
   <h1 class="text-center text-4xl sm:text-5xl md:text-6xl text-red-950 font-highlights">Your Cart</h1>
 <table class="table-auto  w-full border-separate border-spacing-5 border border-transparent">
