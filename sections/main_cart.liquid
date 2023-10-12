@@ -1,8 +1,139 @@
-<h1> Cart</h1>
-
-{% for item in cart.items %}
-  <div class="">
-    
+<div class="max-w-xl mx-auto">
+{% form  "cart", cart%} 
+  {% if cart.empty? %}
+    <h2>Cart is Empty</h2>
+  {% else %}
+  <h1 class="text-center text-4xl sm:text-5xl md:text-6xl text-red-950 font-highlights">Your Cart</h1>
+<table class="table-auto  w-full border-separate border-spacing-5 border border-transparent">
+  <thead>
+    <tr class="h-20">
+      <th class="text-start font-semibold text-red-800">Product</th>
+      <th class="font-semibold text-red-800">Quality</th>
+      <th class="font-semibold text-red-800">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in cart.items %}
+    <tr class="border border-slate-900 border-solid " style="border-width: 2px;">
+      <th class="">
+        <div class="flex flex-col sm:flex-row gap-3 xs:gap-7 ">
+          <div class="w-24 aspect-[0.8] rounded-xl border border-slate-700 overflow-hidden " style="border-width: 2px;">
+            <img src="{{ item.image | img_url : "master" }}" alt="" class="w-full h-full object-cover">
+          </div>
+          <div class="flex items-start flex-col gap-3  ">          
+            <h3 class="font-highlights font-medium text-sm xs:text-lg text-start">{{ item.title }}</h3>
+            <span class="font-highlights font-medium text-sm xs:text-lg" >{{ item.price | money }}</span>
+          </div>
+        </div>
+      </th>
+      <th >
+        <div class="flex gap-3 justify-center items-center">
+          <input type="number" value="{{ item.quantity }}" name="updates[]" class="w-12 text-center">
+          <a href="{{ item.url_to_remove }}" class=" flex items-center" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true" focusable="false" role="presentation" class="icon icon-remove" style="height: 17px;">
+          <path d="M14 3h-3.53a3.07 3.07 0 00-.6-1.65C9.44.82 8.8.5 8 .5s-1.44.32-1.87.85A3.06 3.06 0 005.53 3H2a.5.5 0 000 1h1.25v10c0 .28.22.5.5.5h8.5a.5.5 0 00.5-.5V4H14a.5.5 0 000-1zM6.91 1.98c.23-.29.58-.48 1.09-.48s.85.19 1.09.48c.2.24.3.6.36 1.02h-2.9c.05-.42.17-.78.36-1.02zm4.84 11.52h-7.5V4h7.5v9.5z" fill="currentColor"></path>
+          <path d="M6.55 5.25a.5.5 0 00-.5.5v6a.5.5 0 001 0v-6a.5.5 0 00-.5-.5zM9.45 5.25a.5.5 0 00-.5.5v6a.5.5 0 001 0v-6a.5.5 0 00-.5-.5z" fill="currentColor"></path>
+        </svg></a>
+        </div>
+      </th>
+      <th class="">
+        <div class="">
+          <span class="font-semibold">{{ item.final_line_price | money }}</span>
+        </div>
+      </th>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<div class="h-0.5 bg-red-950 w-full my-10"></div>
+<div class="grid gap-y-10 grid-cols-1 xs:grid-cols-2">
+  <div class="flex flex-col gap-2 w-full sm:w-[75%] lg:w-[60%]">
+    <label for="Cart-note" class="text-red-800 font-normal text-sm font-highlights">Order special instructions</label>
+    <textarea rows="4" class="w-full border border-red-900 rounded-3xl p-5" name="note" form="cart" id="Cart-note" placeholder="Order special instructions" style="border-width: 3px;"></textarea>
   </div>
-  <a href="{{ item.url_to_remove }}">Remove</a>
-{% endfor %}
+  <div class="flex flex-col items-end">
+    <div class="flex gap-4 justify-center xs:justify-end w-full">
+      <span class="text-2xl xs:text-xl font-highlights text-red-800">Total</span>
+      <span class="text-2xl xs:text-xl font-highlights text-red-800">{{ cart.total_price | money}}</span>
+    </div>
+    <button type="submit" name="update" class="w-[80%] xs:w-40 mx-auto xs:mx-0 h-12 rounded-3xl border border-red-800 bg-white text-red-800 mt-6 font-semibold text-base " style="border-width: 3px;">
+      Update
+    </button>
+    <button type="submit" name="checkout" class="w-[90%] xs:w-44 h-12 mx-auto xs:mx-0 rounded-3xl border border-red-800 bg-red-800 text-white mt-6 font-semibold text-base ">
+      Checkout
+    </button>
+  </div>
+</div>
+{% endif %}
+{% endform %} 
+</div>
+{% schema %}
+  {
+    "name": "Main Cart",
+    "tag": "section",
+    "class": "section_wrapper",
+    "settings": [
+        {
+          "type": "range",
+          "id": "size_heading_desktop",
+          "label": "Size Title Blog Desktop",
+          "default": 56,
+          "min": 1,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "size_heading_mobile",
+          "label": "Size Title Blog Mobie",
+          "default": 40,
+          "min": 1,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "size_title",
+          "label": "Size Title Product",
+          "default": 30,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Color Title",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "border_color",
+          "label": "Color Border",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Padding Top",
+          "default": 50,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Padding Bottom",
+          "default": 50,
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+    ],
+    "presets": [
+      {
+        "name": "Main Cart"
+      }
+    ]
+  }
+{% endschema %}

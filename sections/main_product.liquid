@@ -36,7 +36,7 @@
   </div>
 {% endif %}
   <div class="flex justify-start items-start flex-col" ">
-    {% form 'cart' , cart %}
+    {% form 'product' , product %}
       <h2 class="text-5xl font-highlights font-bold product__title" >{{ product.title }}</h2>
       <span class="text-3xl font-semibold mt-7 inline-block">{{ product.price |  money}}</span>
       <div class="mt-5 flex flex-col w-2/3 sm:w-1/2 md:w-2/3 lg:w-1/2">
@@ -50,7 +50,7 @@
             </option>
           {% endfor %}
         </select>
-      </div>
+      </div> 
       <div class="mt-6">
         <label for="my-input" class="text-sm font-highlights text-slate-600"> Quantity</label>
         <div class="w-40 h-12 border border-slate-600 rounded-2xl border-solid flex justify-between items-center mt-2 shadow-2xl" style="border-width: 2px;">

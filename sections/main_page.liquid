@@ -1,13 +1,13 @@
 
 <div class="max-w-xl mx-auto">
-  <div class="max-w-[90%] xs:max-w-[70%] mx-auto" style="padding-top: {{ section.settings.padding_top }}px ; padding-bottom: {{ section.settings.padding_bottom }}px">
+  <div class="max-w-[90%] xs:max-w-[70%] lg:max-w-[50%] mx-auto" style="padding-top: {{ section.settings.padding_top }}px ; padding-bottom: {{ section.settings.padding_bottom }}px">
     <h1 class="font-highlights contact__heading ">{{ page.title }}</h1>
     <div class="mt-5">{{ page.content }}</div>
     <div class="mt-20">
       <form action="" method="get">
       <div class="flex gap-7 flex-col w-full mx-auto">
         <h2 class="text-3xl font-highlights" style="color: {{ section.settings.heading_color }}">Have a question, comment, or just want to say hi? 👇</h2>
-        <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10 lg:gap-14">
+        <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10 ">
           <div class="name ">
             <input type="text" name="comment[author]" value="{{ form.author }}" class="h-14 rounded-2xl hover:shadow-lg transition-all border border-solid w-full px-5 outline-none" placeholder="* Name" style="border-color: {{ section.settings.border_color }} ;border-width: 3px; box-shadow: 0px 7px {{ section.settings.border_color }};">
           </div>
