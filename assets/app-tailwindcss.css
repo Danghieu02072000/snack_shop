@@ -1220,6 +1220,10 @@ body {
   padding: 0.5rem;
 }
 
+.p-3 {
+  padding: 0.75rem;
+}
+
 .p-5 {
   padding: 1.25rem;
 }
@@ -1230,10 +1234,6 @@ body {
 
 .p-\[10px\] {
   padding: 10px;
-}
-
-.p-3 {
-  padding: 0.75rem;
 }
 
 .px-0 {
@@ -1596,6 +1596,14 @@ body {
     margin-right: 0px;
   }
 
+  .xs\:mt-5 {
+    margin-top: 1.25rem;
+  }
+
+  .xs\:mt-7 {
+    margin-top: 1.75rem;
+  }
+
   .xs\:block {
     display: block;
   }
@@ -1654,6 +1662,10 @@ body {
 
   .xs\:gap-7 {
     gap: 1.75rem;
+  }
+
+  .xs\:gap-14 {
+    gap: 3.5rem;
   }
 
   .xs\:p-\[9px\] {
