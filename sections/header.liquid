@@ -20,7 +20,33 @@
                 <div class="flex gap-3 justify-center items-center">
                     <button class="hidden xs:text-xs xs:px-3 xs:py-2 text-sm  py-3 px-4 bg-black text-white xs:inline-block rounded-xl leading-5 hover:opacity-70 hover:shadow-md transition-all">Sign
                         Up</button>
-                    <a href="/cart" class="xs:p-[9px] p-[10px] inline-block rounded-xl cursor-pointer" style=" background-color: {{ section.settings.color_scheme.settings.shadow }};  "><img src="{{ 'Icon_cart.png' | asset_url}} " alt="" class="xs:h-5 xs:w-5 h-6 w-6"></a>
+                    <a href="/cart" class="relative xs:p-[9px] p-[10px] inline-block rounded-xl cursor-pointer group" style=" background-color: {{ section.settings.color_scheme.settings.shadow }};  ">
+                    <img src="{{ 'Icon_cart.png' | asset_url}} " alt="" class="xs:h-5 xs:w-5 h-6 w-6">
+                    <span class="-bottom-2 -right-2 text-xs font-bold border-black border-2 absolute h-5 w-5 bg-white text-black rounded-full flex justify-center items-center">{{ cart.item_count }}</span>
+                    <div class="opacity-0 translate-y-1/4 invisible absolute top-12 w-56 right-0 bg-slate-800 text-white p-5 group-hover:opacity-100 group-hover:visible transition-all duration-700 group-hover:translate-y-0">
+                      {% for item in cart.items %}
+                          <div class="w-full flex  justify-between gap-3 items-center">
+                            <div class="w-14 aspect-[0.8]">
+                              <img src="{{ item.image | img_url: "master" }}" alt="" class="w-full h-full object-cover">
+                            </div>
+                            <div class="">
+                              <span class="text-xs">{{ item.title }}</span>
+                              <span class="text-xs text-slate-300">{{ item.price | money}}</span>
+                              <div class="">
+                                <div class="text-sm">Number : <span>{{ item.quantity }}</span></div>
+                              </div>
+                            </div>
+
+                          </div>
+                      {% endfor %}
+                      <div class="h-0.5 bg-slate-400 my-5"></div>
+                      <div class="flex justify-between gap-3">
+                        <span class="text-white text-sm font-semibold">Total</span>
+                        <span class="text-white text-sm font-semibold">{{ cart.total_price | money }}</span>
+                      </div>
+
+                    </div>
+                    </a>
                 </div>
         </nav>
       {% when 'middle-center' %}
