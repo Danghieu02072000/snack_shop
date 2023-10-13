@@ -1,6 +1,17 @@
 {
   "sections": {
+    "ac2fd07c-080e-450e-a525-cb76d6b09819": {
+      "type": "main_blog",
+      "settings": {
+        "size_heading_desktop": 56,
+        "size_heading_mobile": 40,
+        "size_title": 30,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    }
   },
   "order": [
+    "ac2fd07c-080e-450e-a525-cb76d6b09819"
   ]
 }

@@ -1,16 +1,23 @@
 {
   "sections": {
-    "banner": {
-      "type": "main-collection-banner",
+    "0285754c-1d1e-4217-834b-045bfd1828fc": {
+      "type": "main_collection",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
+        "column_product": 4,
+        "tablet-column_product": 3,
+        "mobie-column_product": 2,
+        "max_product": 8,
+        "size_heading": 36,
+        "color_collection": "#dd1d1d",
+        "size_title": 20,
+        "color_scheme": "",
+        "aspect_ratio": "square",
+        "padding_top": 50,
+        "padding_bottom": 50
       }
     }
   },
   "order": [
-    "banner",
-    "product-grid"
+    "0285754c-1d1e-4217-834b-045bfd1828fc"
   ]
 }
