@@ -29,7 +29,7 @@
                       {% for item in cart.items %}
                           <div class="w-full flex  justify-between gap-3 items-start mt-5">
                             <div class="w-14 aspect-[0.8] overflow-hidden rounded-lg">
-                              <img src="{{ item.image | img_url: "master" }}" alt="" class="w-full h-full">
+                              <img src="{{ item.image | img_url: "master" }}" alt="" class="w-full h-full object-cover">
                             </div>
                             <div class="w-2/3">
                               <span class="text-xs inline-block">{{ item.title }}</span>
