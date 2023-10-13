@@ -1,6 +1,17 @@
 {
   "sections": {
+    "89907801-b1b5-42c2-a0d7-e27a498ff6b0": {
+      "type": "main_article",
+      "settings": {
+        "size_heading_desktop": 56,
+        "size_heading_mobile": 40,
+        "size_title": 30,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    }
   },
   "order": [
+    "89907801-b1b5-42c2-a0d7-e27a498ff6b0"
   ]
 }
